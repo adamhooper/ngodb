@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  name_sw: MyString
+  id: 1
+  name: RegistrationAct1
+  name_sw: RegistrationAct1Sw
 
 two:
-  name: MyString
-  name_sw: MyString
+  id: 2
+  name: RegistrationAct2
+  name_sw: RegistrationAct2Sw

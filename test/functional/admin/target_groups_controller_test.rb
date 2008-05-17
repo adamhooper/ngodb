@@ -1,6 +1,8 @@
 require 'test_helper'
 
-class TargetGroupsControllerTest < ActionController::TestCase
+class Admin::TargetGroupsControllerTest < ActionController::TestCase
+  fixtures :target_groups
+
   def test_should_get_index
     get :index
     assert_response :success
@@ -14,10 +16,10 @@ class TargetGroupsControllerTest < ActionController::TestCase
 
   def test_should_create_target_group
     assert_difference('TargetGroup.count') do
-      post :create, :target_group => { }
+      post :create, :target_group => { :name => 'name', :name_sw => 'name_sw' }
     end
 
-    assert_redirected_to target_group_path(assigns(:target_group))
+    assert_redirected_to admin_target_group_path(assigns(:target_group))
   end
 
   def test_should_show_target_group
@@ -31,8 +33,8 @@ class TargetGroupsControllerTest < ActionController::TestCase
   end
 
   def test_should_update_target_group
-    put :update, :id => target_groups(:one).id, :target_group => { }
-    assert_redirected_to target_group_path(assigns(:target_group))
+    put :update, :id => target_groups(:one).id, :target_group => { :name => 'name', :name_sw => 'name_sw' }
+    assert_redirected_to admin_target_group_path(assigns(:target_group))
   end
 
   def test_should_destroy_target_group
@@ -40,6 +42,6 @@ class TargetGroupsControllerTest < ActionController::TestCase
       delete :destroy, :id => target_groups(:one).id
     end
 
-    assert_redirected_to target_groups_path
+    assert_redirected_to admin_target_groups_path
   end
 end

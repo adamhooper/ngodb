@@ -1,6 +1,8 @@
 require 'test_helper'
 
-class MembershipTypesControllerTest < ActionController::TestCase
+class Admin::MembershipTypesControllerTest < ActionController::TestCase
+  fixtures :membership_types
+
   def test_should_get_index
     get :index
     assert_response :success
@@ -14,10 +16,10 @@ class MembershipTypesControllerTest < ActionController::TestCase
 
   def test_should_create_membership_type
     assert_difference('MembershipType.count') do
-      post :create, :membership_type => { }
+      post :create, :membership_type => { :name => 'name', :name_sw => 'name_sw' }
     end
 
-    assert_redirected_to membership_type_path(assigns(:membership_type))
+    assert_redirected_to admin_membership_type_path(assigns(:membership_type))
   end
 
   def test_should_show_membership_type
@@ -31,8 +33,8 @@ class MembershipTypesControllerTest < ActionController::TestCase
   end
 
   def test_should_update_membership_type
-    put :update, :id => membership_types(:one).id, :membership_type => { }
-    assert_redirected_to membership_type_path(assigns(:membership_type))
+    put :update, :id => membership_types(:one).id, :membership_type => { :name => 'name', :name_sw => 'name_sw' }
+    assert_redirected_to admin_membership_type_path(assigns(:membership_type))
   end
 
   def test_should_destroy_membership_type
@@ -40,6 +42,6 @@ class MembershipTypesControllerTest < ActionController::TestCase
       delete :destroy, :id => membership_types(:one).id
     end
 
-    assert_redirected_to membership_types_path
+    assert_redirected_to admin_membership_types_path
   end
 end

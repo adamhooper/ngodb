@@ -2,10 +2,10 @@
 
 one:
   id: 1
-  name: AnnualBudget1
-  name_sw: AnnualBudget1Sw
+  name: SectorFocus1
+  name_sw: SectorFocus1Sw
 
 two:
   id: 2
-  name: AnnualBudget2
-  name_sw: AnnualBudget2Sw
+  name: SectorFocus2
+  name_sw: SectorFocus2Sw

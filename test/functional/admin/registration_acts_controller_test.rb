@@ -1,6 +1,8 @@
 require 'test_helper'
 
-class RegistrationActsControllerTest < ActionController::TestCase
+class Admin::RegistrationActsControllerTest < ActionController::TestCase
+  fixtures :registration_acts
+
   def test_should_get_index
     get :index
     assert_response :success
@@ -14,10 +16,10 @@ class RegistrationActsControllerTest < ActionController::TestCase
 
   def test_should_create_registration_act
     assert_difference('RegistrationAct.count') do
-      post :create, :registration_act => { }
+      post :create, :registration_act => { :name => 'name', :name_sw => 'name_sw' }
     end
 
-    assert_redirected_to registration_act_path(assigns(:registration_act))
+    assert_redirected_to admin_registration_act_path(assigns(:registration_act))
   end
 
   def test_should_show_registration_act
@@ -31,8 +33,8 @@ class RegistrationActsControllerTest < ActionController::TestCase
   end
 
   def test_should_update_registration_act
-    put :update, :id => registration_acts(:one).id, :registration_act => { }
-    assert_redirected_to registration_act_path(assigns(:registration_act))
+    put :update, :id => registration_acts(:one).id, :registration_act => { :name => 'name', :name_sw => 'name_sw' }
+    assert_redirected_to admin_registration_act_path(assigns(:registration_act))
   end
 
   def test_should_destroy_registration_act
@@ -40,6 +42,6 @@ class RegistrationActsControllerTest < ActionController::TestCase
       delete :destroy, :id => registration_acts(:one).id
     end
 
-    assert_redirected_to registration_acts_path
+    assert_redirected_to admin_registration_acts_path
   end
 end
