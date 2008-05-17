@@ -1,15 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :sector_focus
-
-  map.resources :target_groups
-
-  map.resources :funding_sources
-
-  map.resources :annual_budgets
-
-  map.resources :membership_types
-
-  map.resources :registration_acts
+  map.namespace :admin do |admin|
+    admin.resources :sector_focuses
+    admin.resources :target_groups
+    admin.resources :funding_sources
+    admin.resources :annual_budgets
+    admin.resources :membership_types
+    admin.resources :registration_acts
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 

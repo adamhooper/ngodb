@@ -1,6 +1,6 @@
-class CreateSectorFocus < ActiveRecord::Migration
+class CreateSectorFocuses < ActiveRecord::Migration
   def self.up
-    create_table :sector_focus do |t|
+    create_table :sector_focuses do |t|
       t.string :name, :null => false
       t.string :name_sw, :null => false
 
@@ -9,6 +9,6 @@ class CreateSectorFocus < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :sector_focus
+    drop_table :sector_focuses
   end
 end

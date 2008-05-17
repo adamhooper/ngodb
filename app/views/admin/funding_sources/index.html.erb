@@ -10,13 +10,13 @@
   <tr>
     <td><%=h funding_source.name %></td>
     <td><%=h funding_source.name_sw %></td>
-    <td><%= link_to 'Show', funding_source %></td>
-    <td><%= link_to 'Edit', edit_funding_source_path(funding_source) %></td>
-    <td><%= link_to 'Destroy', funding_source, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [:admin, funding_source] %></td>
+    <td><%= link_to 'Edit', edit_admin_funding_source_path(funding_source) %></td>
+    <td><%= link_to 'Destroy', [:admin, funding_source], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New funding_source', new_funding_source_path %>
+<%= link_to 'New funding_source', new_admin_funding_source_path %>

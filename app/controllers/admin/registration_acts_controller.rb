@@ -1,4 +1,4 @@
-class RegistrationActsController < ApplicationController
+class Admin::RegistrationActsController < Admin::BaseController
   # GET /registration_acts
   # GET /registration_acts.xml
   def index
@@ -45,7 +45,7 @@ class RegistrationActsController < ApplicationController
     respond_to do |format|
       if @registration_act.save
         flash[:notice] = 'RegistrationAct was successfully created.'
-        format.html { redirect_to(@registration_act) }
+        format.html { redirect_to([:admin, @registration_act]) }
         format.xml  { render :xml => @registration_act, :status => :created, :location => @registration_act }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class RegistrationActsController < ApplicationController
     respond_to do |format|
       if @registration_act.update_attributes(params[:registration_act])
         flash[:notice] = 'RegistrationAct was successfully updated.'
-        format.html { redirect_to(@registration_act) }
+        format.html { redirect_to([:admin, @registration_act]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class RegistrationActsController < ApplicationController
     @registration_act.destroy
 
     respond_to do |format|
-      format.html { redirect_to(registration_acts_url) }
+      format.html { redirect_to(admin_registration_acts_url) }
       format.xml  { head :ok }
     end
   end

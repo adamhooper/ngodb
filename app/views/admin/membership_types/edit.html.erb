@@ -1,6 +1,6 @@
 <h1>Editing membership_type</h1>
 
-<% form_for(@membership_type) do |f| %>
+<% form_for([:admin, @membership_type]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @membership_type %> |
-<%= link_to 'Back', membership_types_path %>
+<%= link_to 'Show', [:admin, @membership_type] %> |
+<%= link_to 'Back', admin_membership_types_path %>

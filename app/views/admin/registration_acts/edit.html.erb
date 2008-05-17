@@ -1,6 +1,6 @@
 <h1>Editing registration_act</h1>
 
-<% form_for(@registration_act) do |f| %>
+<% form_for([:admin, @registration_act]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @registration_act %> |
-<%= link_to 'Back', registration_acts_path %>
+<%= link_to 'Show', [:admin, @registration_act] %> |
+<%= link_to 'Back', admin_registration_acts_path %>

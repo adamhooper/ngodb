@@ -1,6 +1,6 @@
 <h1>Editing funding_source</h1>
 
-<% form_for(@funding_source) do |f| %>
+<% form_for([:admin, @funding_source]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @funding_source %> |
-<%= link_to 'Back', funding_sources_path %>
+<%= link_to 'Show', [:admin, @funding_source] %> |
+<%= link_to 'Back', admin_funding_sources_path %>

@@ -1,4 +1,4 @@
-class AnnualBudgetsController < ApplicationController
+class Admin::AnnualBudgetsController < Admin::BaseController
   # GET /annual_budgets
   # GET /annual_budgets.xml
   def index
@@ -45,7 +45,7 @@ class AnnualBudgetsController < ApplicationController
     respond_to do |format|
       if @annual_budget.save
         flash[:notice] = 'AnnualBudget was successfully created.'
-        format.html { redirect_to(@annual_budget) }
+        format.html { redirect_to([:admin, @annual_budget]) }
         format.xml  { render :xml => @annual_budget, :status => :created, :location => @annual_budget }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class AnnualBudgetsController < ApplicationController
     respond_to do |format|
       if @annual_budget.update_attributes(params[:annual_budget])
         flash[:notice] = 'AnnualBudget was successfully updated.'
-        format.html { redirect_to(@annual_budget) }
+        format.html { redirect_to([:admin, @annual_budget]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class AnnualBudgetsController < ApplicationController
     @annual_budget.destroy
 
     respond_to do |format|
-      format.html { redirect_to(annual_budgets_url) }
+      format.html { redirect_to(admin_annual_budgets_url) }
       format.xml  { head :ok }
     end
   end

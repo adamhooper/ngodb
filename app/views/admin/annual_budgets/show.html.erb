@@ -1,3 +1,12 @@
+<p>
+  <b>Name:</b>
+  <%=h @annual_budget.name %>
+</p>
 
-<%= link_to 'Edit', edit_annual_budget_path(@annual_budget) %> |
-<%= link_to 'Back', annual_budgets_path %>
+<p>
+  <b>Name sw:</b>
+  <%=h @annual_budget.name_sw %>
+</p>
+
+<%= link_to 'Edit', edit_admin_annual_budget_path(@annual_budget) %> |
+<%= link_to 'Back', admin_annual_budgets_path %>

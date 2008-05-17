@@ -1,6 +1,6 @@
 <h1>Editing target_group</h1>
 
-<% form_for(@target_group) do |f| %>
+<% form_for([:admin, @target_group]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @target_group %> |
-<%= link_to 'Back', target_groups_path %>
+<%= link_to 'Show', [:admin, @target_group] %> |
+<%= link_to 'Back', admin_target_groups_path %>

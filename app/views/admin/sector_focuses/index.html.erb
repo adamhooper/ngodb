@@ -1,4 +1,4 @@
-<h1>Listing sector_focus</h1>
+<h1>Listing sector_focuses</h1>
 
 <table>
   <tr>
@@ -6,17 +6,17 @@
     <th>Name sw</th>
   </tr>
 
-<% for sector_focus in @sector_focus %>
+<% for sector_focus in @sector_focuses %>
   <tr>
     <td><%=h sector_focus.name %></td>
     <td><%=h sector_focus.name_sw %></td>
-    <td><%= link_to 'Show', sector_focus %></td>
-    <td><%= link_to 'Edit', edit_sector_focus_path(sector_focus) %></td>
-    <td><%= link_to 'Destroy', sector_focus, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [:admin, sector_focus] %></td>
+    <td><%= link_to 'Edit', edit_admin_sector_focus_path(sector_focus) %></td>
+    <td><%= link_to 'Destroy', [:admin, sector_focus], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New sector_focus', new_sector_focus_path %>
+<%= link_to 'New sector_focus', new_admin_sector_focus_path %>

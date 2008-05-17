@@ -1,4 +1,4 @@
-class FundingSourcesController < ApplicationController
+class Admin::FundingSourcesController < Admin::BaseController
   # GET /funding_sources
   # GET /funding_sources.xml
   def index
@@ -45,7 +45,7 @@ class FundingSourcesController < ApplicationController
     respond_to do |format|
       if @funding_source.save
         flash[:notice] = 'FundingSource was successfully created.'
-        format.html { redirect_to(@funding_source) }
+        format.html { redirect_to([:admin, @funding_source]) }
         format.xml  { render :xml => @funding_source, :status => :created, :location => @funding_source }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class FundingSourcesController < ApplicationController
     respond_to do |format|
       if @funding_source.update_attributes(params[:funding_source])
         flash[:notice] = 'FundingSource was successfully updated.'
-        format.html { redirect_to(@funding_source) }
+        format.html { redirect_to([:admin, @funding_source]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class FundingSourcesController < ApplicationController
     @funding_source.destroy
 
     respond_to do |format|
-      format.html { redirect_to(funding_sources_url) }
+      format.html { redirect_to(admin_funding_sources_url) }
       format.xml  { head :ok }
     end
   end

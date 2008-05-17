@@ -10,13 +10,13 @@
   <tr>
     <td><%=h membership_type.name %></td>
     <td><%=h membership_type.name_sw %></td>
-    <td><%= link_to 'Show', membership_type %></td>
-    <td><%= link_to 'Edit', edit_membership_type_path(membership_type) %></td>
-    <td><%= link_to 'Destroy', membership_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [:admin, membership_type] %></td>
+    <td><%= link_to 'Edit', edit_admin_membership_type_path(membership_type) %></td>
+    <td><%= link_to 'Destroy', [:admin, membership_type], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New membership_type', new_membership_type_path %>
+<%= link_to 'New membership_type', new_admin_membership_type_path %>

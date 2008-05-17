@@ -1,4 +1,4 @@
-class MembershipTypesController < ApplicationController
+class Admin::MembershipTypesController < Admin::BaseController
   # GET /membership_types
   # GET /membership_types.xml
   def index
@@ -45,7 +45,7 @@ class MembershipTypesController < ApplicationController
     respond_to do |format|
       if @membership_type.save
         flash[:notice] = 'MembershipType was successfully created.'
-        format.html { redirect_to(@membership_type) }
+        format.html { redirect_to([:admin, @membership_type]) }
         format.xml  { render :xml => @membership_type, :status => :created, :location => @membership_type }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class MembershipTypesController < ApplicationController
     respond_to do |format|
       if @membership_type.update_attributes(params[:membership_type])
         flash[:notice] = 'MembershipType was successfully updated.'
-        format.html { redirect_to(@membership_type) }
+        format.html { redirect_to([:admin, @membership_type]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class MembershipTypesController < ApplicationController
     @membership_type.destroy
 
     respond_to do |format|
-      format.html { redirect_to(membership_types_url) }
+      format.html { redirect_to(admin_membership_types_url) }
       format.xml  { head :ok }
     end
   end

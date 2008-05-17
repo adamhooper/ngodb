@@ -1,6 +1,6 @@
 <h1>Editing sector_focus</h1>
 
-<% form_for(@sector_focus) do |f| %>
+<% form_for([:admin, @sector_focus]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @sector_focus %> |
-<%= link_to 'Back', sector_focus_path %>
+<%= link_to 'Show', [:admin, @sector_focus] %> |
+<%= link_to 'Back', admin_sector_focuses_path %>

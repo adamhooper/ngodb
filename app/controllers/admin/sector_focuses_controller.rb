@@ -1,17 +1,17 @@
-class SectorFocusController < ApplicationController
-  # GET /sector_focus
-  # GET /sector_focus.xml
+class Admin::SectorFocusesController < Admin::BaseController
+  # GET /sector_focuses
+  # GET /sector_focuses.xml
   def index
-    @sector_focus = SectorFocus.find(:all)
+    @sector_focuses = SectorFocus.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @sector_focus }
+      format.xml  { render :xml => @sector_focuses }
     end
   end
 
-  # GET /sector_focus/1
-  # GET /sector_focus/1.xml
+  # GET /sector_focuses/1
+  # GET /sector_focuses/1.xml
   def show
     @sector_focus = SectorFocus.find(params[:id])
 
@@ -21,8 +21,8 @@ class SectorFocusController < ApplicationController
     end
   end
 
-  # GET /sector_focus/new
-  # GET /sector_focus/new.xml
+  # GET /sector_focuses/new
+  # GET /sector_focuses/new.xml
   def new
     @sector_focus = SectorFocus.new
 
@@ -32,20 +32,20 @@ class SectorFocusController < ApplicationController
     end
   end
 
-  # GET /sector_focus/1/edit
+  # GET /sector_focuses/1/edit
   def edit
     @sector_focus = SectorFocus.find(params[:id])
   end
 
-  # POST /sector_focus
-  # POST /sector_focus.xml
+  # POST /sector_focuses
+  # POST /sector_focuses.xml
   def create
     @sector_focus = SectorFocus.new(params[:sector_focus])
 
     respond_to do |format|
       if @sector_focus.save
         flash[:notice] = 'SectorFocus was successfully created.'
-        format.html { redirect_to(@sector_focus) }
+        format.html { redirect_to([:admin, @sector_focus]) }
         format.xml  { render :xml => @sector_focus, :status => :created, :location => @sector_focus }
       else
         format.html { render :action => "new" }
@@ -54,15 +54,15 @@ class SectorFocusController < ApplicationController
     end
   end
 
-  # PUT /sector_focus/1
-  # PUT /sector_focus/1.xml
+  # PUT /sector_focuses/1
+  # PUT /sector_focuses/1.xml
   def update
     @sector_focus = SectorFocus.find(params[:id])
 
     respond_to do |format|
       if @sector_focus.update_attributes(params[:sector_focus])
         flash[:notice] = 'SectorFocus was successfully updated.'
-        format.html { redirect_to(@sector_focus) }
+        format.html { redirect_to([:admin, @sector_focus]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +71,14 @@ class SectorFocusController < ApplicationController
     end
   end
 
-  # DELETE /sector_focus/1
-  # DELETE /sector_focus/1.xml
+  # DELETE /sector_focuses/1
+  # DELETE /sector_focuses/1.xml
   def destroy
     @sector_focus = SectorFocus.find(params[:id])
     @sector_focus.destroy
 
     respond_to do |format|
-      format.html { redirect_to(sector_focus_url) }
+      format.html { redirect_to(admin_sector_focuses_url) }
       format.xml  { head :ok }
     end
   end

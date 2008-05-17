@@ -1,4 +1,4 @@
-class TargetGroupsController < ApplicationController
+class Admin::TargetGroupsController < Admin::BaseController
   # GET /target_groups
   # GET /target_groups.xml
   def index
@@ -45,7 +45,7 @@ class TargetGroupsController < ApplicationController
     respond_to do |format|
       if @target_group.save
         flash[:notice] = 'TargetGroup was successfully created.'
-        format.html { redirect_to(@target_group) }
+        format.html { redirect_to([:admin, @target_group]) }
         format.xml  { render :xml => @target_group, :status => :created, :location => @target_group }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class TargetGroupsController < ApplicationController
     respond_to do |format|
       if @target_group.update_attributes(params[:target_group])
         flash[:notice] = 'TargetGroup was successfully updated.'
-        format.html { redirect_to(@target_group) }
+        format.html { redirect_to([:admin, @target_group]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class TargetGroupsController < ApplicationController
     @target_group.destroy
 
     respond_to do |format|
-      format.html { redirect_to(target_groups_url) }
+      format.html { redirect_to(admin_target_groups_url) }
       format.xml  { head :ok }
     end
   end
