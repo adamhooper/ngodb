@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @funding_source.name %>
+</p>
+
+<p>
+  <b>Name sw:</b>
+  <%=h @funding_source.name_sw %>
+</p>
+
+
+<%= link_to 'Edit', edit_funding_source_path(@funding_source) %> |
+<%= link_to 'Back', funding_sources_path %>

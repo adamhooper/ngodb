@@ -1,0 +1,20 @@
+<h1>Editing funding_source</h1>
+
+<% form_for(@funding_source) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :name_sw %><br />
+    <%= f.text_field :name_sw %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @funding_source %> |
+<%= link_to 'Back', funding_sources_path %>

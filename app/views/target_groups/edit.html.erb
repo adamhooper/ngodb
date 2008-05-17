@@ -1,0 +1,20 @@
+<h1>Editing target_group</h1>
+
+<% form_for(@target_group) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :name_sw %><br />
+    <%= f.text_field :name_sw %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @target_group %> |
+<%= link_to 'Back', target_groups_path %>

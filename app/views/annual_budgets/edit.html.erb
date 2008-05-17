@@ -1,0 +1,12 @@
+<h1>Editing annual_budget</h1>
+
+<% form_for(@annual_budget) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @annual_budget %> |
+<%= link_to 'Back', annual_budgets_path %>

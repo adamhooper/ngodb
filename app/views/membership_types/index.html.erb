@@ -1,0 +1,22 @@
+<h1>Listing membership_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Name sw</th>
+  </tr>
+
+<% for membership_type in @membership_types %>
+  <tr>
+    <td><%=h membership_type.name %></td>
+    <td><%=h membership_type.name_sw %></td>
+    <td><%= link_to 'Show', membership_type %></td>
+    <td><%= link_to 'Edit', edit_membership_type_path(membership_type) %></td>
+    <td><%= link_to 'Destroy', membership_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New membership_type', new_membership_type_path %>

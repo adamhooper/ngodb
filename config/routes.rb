@@ -1,4 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :sector_focus
+
+  map.resources :target_groups
+
+  map.resources :funding_sources
+
+  map.resources :annual_budgets
+
+  map.resources :membership_types
+
+  map.resources :registration_acts
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

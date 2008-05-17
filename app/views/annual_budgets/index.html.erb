@@ -1,0 +1,18 @@
+<h1>Listing annual_budgets</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% for annual_budget in @annual_budgets %>
+  <tr>
+    <td><%= link_to 'Show', annual_budget %></td>
+    <td><%= link_to 'Edit', edit_annual_budget_path(annual_budget) %></td>
+    <td><%= link_to 'Destroy', annual_budget, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New annual_budget', new_annual_budget_path %>

@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @membership_type.name %>
+</p>
+
+<p>
+  <b>Name sw:</b>
+  <%=h @membership_type.name_sw %>
+</p>
+
+
+<%= link_to 'Edit', edit_membership_type_path(@membership_type) %> |
+<%= link_to 'Back', membership_types_path %>

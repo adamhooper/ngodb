@@ -1,0 +1,22 @@
+<h1>Listing registration_acts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Name sw</th>
+  </tr>
+
+<% for registration_act in @registration_acts %>
+  <tr>
+    <td><%=h registration_act.name %></td>
+    <td><%=h registration_act.name_sw %></td>
+    <td><%= link_to 'Show', registration_act %></td>
+    <td><%= link_to 'Edit', edit_registration_act_path(registration_act) %></td>
+    <td><%= link_to 'Destroy', registration_act, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New registration_act', new_registration_act_path %>

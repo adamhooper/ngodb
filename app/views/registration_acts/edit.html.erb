@@ -1,0 +1,20 @@
+<h1>Editing registration_act</h1>
+
+<% form_for(@registration_act) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :name_sw %><br />
+    <%= f.text_field :name_sw %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @registration_act %> |
+<%= link_to 'Back', registration_acts_path %>
