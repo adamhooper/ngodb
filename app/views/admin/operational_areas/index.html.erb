@@ -1,0 +1,22 @@
+<h1>Listing operational_areas</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Name sw</th>
+  </tr>
+
+<% for operational_area in @operational_areas %>
+  <tr>
+    <td><%=h operational_area.name %></td>
+    <td><%=h operational_area.name_sw %></td>
+    <td><%= link_to 'Show', [:admin, operational_area] %></td>
+    <td><%= link_to 'Edit', edit_admin_operational_area_path(operational_area) %></td>
+    <td><%= link_to 'Destroy', [:admin, operational_area], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New operational_area', new_admin_operational_area_path %>

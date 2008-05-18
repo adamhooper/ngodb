@@ -1,0 +1,19 @@
+<h1>New operational_area</h1>
+
+<% form_for([:admin, @operational_area]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :name_sw %><br />
+    <%= f.text_field :name_sw %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', admin_operational_areas_path %>
