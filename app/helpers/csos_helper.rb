@@ -1,0 +1,2 @@
+module CsosHelper
+end

@@ -1,0 +1,184 @@
+<h1>Editing cso</h1>
+
+<% form_for(@cso) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :name_sw %><br />
+    <%= f.text_field :name_sw %>
+  </p>
+  <p>
+    <%= f.label :abbreviation %><br />
+    <%= f.text_field :abbreviation %>
+  </p>
+  <p>
+    <%= f.label :abbreviation_sw %><br />
+    <%= f.text_field :abbreviation_sw %>
+  </p>
+  <p>
+    <%= f.label :mailing_address %><br />
+    <%= f.text_field :mailing_address %>
+  </p>
+  <p>
+    <%= f.label :physical_address %><br />
+    <%= f.text_field :physical_address %>
+  </p>
+  <p>
+    <%= f.label :physical_address_sw %><br />
+    <%= f.text_field :physical_address_sw %>
+  </p>
+  <p>
+    <%= f.label :region %><br />
+    <%= f.text_field :region %>
+  </p>
+  <p>
+    <%= f.label :district %><br />
+    <%= f.text_field :district %>
+  </p>
+  <p>
+    <%= f.label :town %><br />
+    <%= f.text_field :town %>
+  </p>
+  <p>
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </p>
+  <p>
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile %>
+  </p>
+  <p>
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.label :head_person %><br />
+    <%= f.text_field :head_person %>
+  </p>
+  <p>
+    <%= f.label :contact_person %><br />
+    <%= f.text_field :contact_person %>
+  </p>
+  <p>
+    <%= f.label :contact_person_position %><br />
+    <%= f.text_field :contact_person_position %>
+  </p>
+  <p>
+    <%= f.label :contact_person_position_sw %><br />
+    <%= f.text_field :contact_person_position_sw %>
+  </p>
+  <p>
+    <%= f.label :num_staff_male %><br />
+    <%= f.text_field :num_staff_male %>
+  </p>
+  <p>
+    <%= f.label :num_staff_female %><br />
+    <%= f.text_field :num_staff_female %>
+  </p>
+  <p>
+    <%= f.label :num_volunteers_male %><br />
+    <%= f.text_field :num_volunteers_male %>
+  </p>
+  <p>
+    <%= f.label :num_volunteers_female %><br />
+    <%= f.text_field :num_volunteers_female %>
+  </p>
+  <p>
+    <%= f.label :registration_number %><br />
+    <%= f.text_field :registration_number %>
+  </p>
+  <p>
+    <%= f.label :registration_year %><br />
+    <%= f.text_field :registration_year %>
+  </p>
+  <p>
+    <%= f.label :registration_act_id %><br />
+    <%= f.text_field :registration_act_id %>
+  </p>
+  <p>
+    <%= f.label :membership_type_id %><br />
+    <%= f.text_field :membership_type_id %>
+  </p>
+  <p>
+    <%= f.label :networks %><br />
+    <%= f.text_field :networks %>
+  </p>
+  <p>
+    <%= f.label :networks_sw %><br />
+    <%= f.text_field :networks_sw %>
+  </p>
+  <p>
+    <%= f.label :annual_budget_id %><br />
+    <%= f.text_field :annual_budget_id %>
+  </p>
+  <p>
+    <%= f.label :grant_funders %><br />
+    <%= f.text_field :grant_funders %>
+  </p>
+  <p>
+    <%= f.label :grant_funders_sw %><br />
+    <%= f.text_field :grant_funders_sw %>
+  </p>
+  <p>
+    <%= f.label :operational_area_id %><br />
+    <%= f.text_field :operational_area_id %>
+  </p>
+  <p>
+    <%= f.label :operational_area_details %><br />
+    <%= f.text_field :operational_area_details %>
+  </p>
+  <p>
+    <%= f.label :operational_area_details_sw %><br />
+    <%= f.text_field :operational_area_details_sw %>
+  </p>
+  <p>
+    <%= f.label :urban_focus %><br />
+    <%= f.check_box :urban_focus %>
+  </p>
+  <p>
+    <%= f.label :rural_focus %><br />
+    <%= f.check_box :rural_focus %>
+  </p>
+  <p>
+    <%= f.label :mission_statement %><br />
+    <%= f.text_area :mission_statement %>
+  </p>
+  <p>
+    <%= f.label :mission_statement_sw %><br />
+    <%= f.text_area :mission_statement_sw %>
+  </p>
+  <p>
+    <%= f.label :vision_statement %><br />
+    <%= f.text_area :vision_statement %>
+  </p>
+  <p>
+    <%= f.label :vision_statement_sw %><br />
+    <%= f.text_area :vision_statement_sw %>
+  </p>
+  <p>
+    <%= f.label :main_objectives %><br />
+    <%= f.text_area :main_objectives %>
+  </p>
+  <p>
+    <%= f.label :main_objectives_sw %><br />
+    <%= f.text_area :main_objectives_sw %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cso %> |
+<%= link_to 'Back', csos_path %>
