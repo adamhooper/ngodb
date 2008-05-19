@@ -1,15 +1,15 @@
-<h1>Listing csos</h1>
+<h1><%=h _('Listing CSOs') %></h1>
 
 <% if @csos.empty? %>
-  <p>No CSOs were found</p>
+  <p><%=h _('No CSOs were found') %></p>
 <% else %>
-  <p>Found <%= @csos.length %> CSOs:</p>
+  <p><%=h n_('Found one CSO', 'Found %{num} CSOs', @csos.length) % { :num => @csos.length } %></p>
 
   <ul class="csos">
     <% for cso in @csos %>
       <li>
         <%= link_to cso.name, cso, :class => 'cso' %>
-        <%= link_to '[Details]', cso %>
+        <%= link_to _('[Details]'), cso %>
       </li>
     <% end %>
   </ul>
@@ -17,6 +17,6 @@
 
 <% if admin? %>
   <p class="actions">
-    <%= link_to 'New cso', new_cso_path %>
+    <%= link_to _('New cso'), new_cso_path %>
   </p>
 <% end %>

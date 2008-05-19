@@ -1,0 +1,573 @@
+# ngodb: NGO database
+# Copyright (C) 2008 Adam Hooper
+# This file is distributed under the same license as the ngodb package.
+# Adam Hooper <adam@adamhooper.com>, 2008
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ngodb 0.0.1\n"
+"POT-Creation-Date: 2008-05-19 15:44-0400\n"
+"PO-Revision-Date: 2008-05-19 14:05-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/models/registration_act.rb:-
+msgid "registration act"
+msgstr ""
+
+#: app/models/registration_act.rb:-
+msgid "RegistrationAct|Name"
+msgstr ""
+
+#: app/models/registration_act.rb:-
+msgid "RegistrationAct|Name sw"
+msgstr ""
+
+#: app/models/annual_budget.rb:-
+msgid "annual budget"
+msgstr ""
+
+#: app/models/annual_budget.rb:-
+msgid "AnnualBudget|Name"
+msgstr ""
+
+#: app/models/annual_budget.rb:-
+msgid "AnnualBudget|Name sw"
+msgstr ""
+
+#: app/models/operational_area.rb:-
+msgid "operational area"
+msgstr ""
+
+#: app/models/operational_area.rb:-
+msgid "OperationalArea|Name"
+msgstr ""
+
+#: app/models/operational_area.rb:-
+msgid "OperationalArea|Name sw"
+msgstr ""
+
+#: app/models/sector_focus.rb:-
+msgid "sector focus"
+msgstr ""
+
+#: app/models/sector_focus.rb:-
+msgid "SectorFocus|Name"
+msgstr ""
+
+#: app/models/sector_focus.rb:-
+msgid "SectorFocus|Name sw"
+msgstr ""
+
+#: app/models/membership_type.rb:-
+msgid "membership type"
+msgstr ""
+
+#: app/models/membership_type.rb:-
+msgid "MembershipType|Name"
+msgstr ""
+
+#: app/models/membership_type.rb:-
+msgid "MembershipType|Name sw"
+msgstr ""
+
+#: app/models/target_group.rb:-
+msgid "target group"
+msgstr ""
+
+#: app/models/target_group.rb:-
+msgid "TargetGroup|Name"
+msgstr ""
+
+#: app/models/target_group.rb:-
+msgid "TargetGroup|Name sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "cso"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Name"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Abbreviation"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Mailing address"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Physical address"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Physical address sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Region"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|District"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Town"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Telephone"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Mobile"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Fax"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Email"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Website"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Head person"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Contact person"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Contact person position"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Contact person position sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Num staff male"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Num staff female"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Num volunteers male"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Num volunteers female"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Registration number"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Registration year"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Registration act"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Registration act other"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Registration act other sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Membership type"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Networks"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Annual budget"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Grant funders"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Grant funders sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Target groups other"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Target groups other sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Sector focuses other"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Sector focuses other sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Operational area"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Operational area details"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Operational area details sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Urban focus"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Rural focus"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Mission statement"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Mission statement sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Vision statement"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Vision statement sw"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Main objectives"
+msgstr ""
+
+#: app/models/cso.rb:-
+msgid "Cso|Main objectives sw"
+msgstr ""
+
+#: app/models/past_achievement.rb:-
+msgid "past achievement"
+msgstr ""
+
+#: app/models/past_achievement.rb:-
+msgid "PastAchievement|Cso"
+msgstr ""
+
+#: app/models/past_achievement.rb:-
+msgid "PastAchievement|Year"
+msgstr ""
+
+#: app/models/past_achievement.rb:-
+msgid "PastAchievement|Description"
+msgstr ""
+
+#: app/models/past_achievement.rb:-
+msgid "PastAchievement|Description sw"
+msgstr ""
+
+#: app/models/funding_source.rb:-
+msgid "funding source"
+msgstr ""
+
+#: app/models/funding_source.rb:-
+msgid "FundingSource|Name"
+msgstr ""
+
+#: app/models/funding_source.rb:-
+msgid "FundingSource|Name sw"
+msgstr ""
+
+#: app/views/csos/index.html.erb:1
+msgid "Listing CSOs"
+msgstr ""
+
+#: app/views/csos/index.html.erb:4
+msgid "No CSOs were found"
+msgstr ""
+
+#: app/views/csos/index.html.erb:6
+msgid "Found one CSO"
+msgid_plural "Found %{num} CSOs"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/views/csos/index.html.erb:12
+msgid "[Details]"
+msgstr ""
+
+#: app/views/csos/index.html.erb:20
+msgid "New cso"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:6 app/views/csos/show.html.erb:8
+msgid "Background Information"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:7
+msgid "Name"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:8 app/views/csos/show.html.erb:9
+msgid "Abbreviation"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:9 app/views/csos/show.html.erb:10
+msgid "Region"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:10 app/views/csos/show.html.erb:11
+msgid "District"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:11 app/views/csos/show.html.erb:12
+msgid "Town"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:12 app/views/csos/show.html.erb:13
+msgid "P.O. Box"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:13 app/views/csos/show.html.erb:14
+msgid "Address"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:14 app/views/csos/show.html.erb:15
+msgid "Telephone (land-line)"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:15 app/views/csos/show.html.erb:16
+msgid "Telephone (mobile)"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:16 app/views/csos/show.html.erb:17
+msgid "Fax"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:17 app/views/csos/show.html.erb:18
+msgid "Email"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:18 app/views/csos/show.html.erb:19
+msgid "Website"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:21 app/views/csos/show.html.erb:22
+msgid "Personnel"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:22 app/views/csos/show.html.erb:23
+msgid "Head of Organization"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:23 app/views/csos/show.html.erb:24
+msgid "Name of Contact Person"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:24 app/views/csos/show.html.erb:25
+msgid "Position of Contact Person"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:25 app/views/csos/show.html.erb:26
+msgid "Number of Staff"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:27 app/views/csos/show.html.erb:28
+msgid "Number of paid male staff:"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:28 app/views/csos/show.html.erb:29
+msgid "Number of paid female staff:"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:29 app/views/csos/show.html.erb:30
+msgid "Number of volunteer male staff:"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:30 app/views/csos/show.html.erb:31
+msgid "Number of volunteer female staff:"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:35 app/views/csos/show.html.erb:36
+msgid "Registration and Funding"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:36 app/views/csos/show.html.erb:37
+msgid "Registration Number"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:37 app/views/csos/show.html.erb:38
+msgid "Year of Registration"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:38 app/views/csos/show.html.erb:39
+msgid "Membership Type"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:41 app/views/csos/show.html.erb:40
+msgid "Network Membership"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:42 app/views/csos/show.html.erb:41
+msgid "Annual Budget"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:45 app/views/csos/show.html.erb:42
+msgid "Main Funding Sources"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:48 app/views/csos/show.html.erb:45
+msgid "Work"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:49 app/views/csos/show.html.erb:46
+msgid "Target Groups"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:52
+msgid "Other Target Groups"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:53 app/views/csos/show.html.erb:49
+msgid "Sector Focuses"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:56
+msgid "Other Sector Focuses"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:57 app/views/csos/show.html.erb:52
+msgid "Operational Area"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:60
+msgid "Name Operational Area"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:61 app/views/csos/show.html.erb:56
+msgid "Focus"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:62 app/views/csos/show.html.erb:57
+msgid "Urban"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:63 app/views/csos/show.html.erb:57
+msgid "Rural"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:67 app/views/csos/show.html.erb:61
+msgid "Additional Information"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:68 app/views/csos/show.html.erb:62
+msgid "Mission Statement"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:69 app/views/csos/show.html.erb:63
+msgid "Vision Statement"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:70 app/views/csos/show.html.erb:64
+msgid "Main Objectives"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:71 app/views/csos/show.html.erb:65
+msgid "Major Past Achievements"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:75
+msgid "Year"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:76
+msgid "Brief Description"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:80
+#: app/views/csos/_form_table_subtitle.html.erb:10
+msgid "English"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:81
+msgid "Swahili"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:88
+msgid "Add Another Achievement"
+msgstr ""
+
+#: app/views/csos/_past_achievement.html.erb:9
+msgid "Remove"
+msgstr ""
+
+#: app/views/csos/new.html.erb:1
+msgid "New CSO"
+msgstr ""
+
+#: app/views/csos/new.html.erb:9
+msgid "Create"
+msgstr ""
+
+#: app/views/csos/new.html.erb:13 app/views/csos/edit.html.erb:14
+#: app/views/csos/show.html.erb:82
+msgid "Back"
+msgstr ""
+
+#: app/views/csos/_form_table_subtitle.html.erb:11
+msgid "Swahilish"
+msgstr ""
+
+#: app/views/csos/edit.html.erb:1
+msgid "Editing CSO"
+msgstr ""
+
+#: app/views/csos/edit.html.erb:9
+msgid "Update"
+msgstr ""
+
+#: app/views/csos/edit.html.erb:13
+msgid "Show"
+msgstr ""
+
+#: app/views/csos/show.html.erb:79
+msgid "Edit"
+msgstr ""
+
+#: app/views/csos/show.html.erb:80
+msgid "Destroy"
+msgstr ""
+
+#: app/views/csos/show.html.erb:80
+msgid "Are you sure you want to destroy this CSO? This cannot be undone."
+msgstr ""

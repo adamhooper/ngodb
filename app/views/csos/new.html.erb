@@ -1,4 +1,4 @@
-<h1>New cso</h1>
+<h1><%=h _('New CSO') %></h1>
 
 <% form_for(@cso) do |f| %>
   <%= f.error_messages %>
@@ -6,8 +6,8 @@
   <%= render :partial => 'form', :locals => { :cso => @cso, :f => f } %>
 
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit _('Create') %>
   </p>
 <% end %>
 
-<%= link_to 'Back', csos_path %>
+<%= link_to _('Back'), csos_path %>

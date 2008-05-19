@@ -2,7 +2,11 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  before_init_gettext :set_locale_from_params
+  init_gettext 'ngodb'
+
   layout 'public'
+
   helper :all # include all helpers, all the time
   helper_method :admin?
 
@@ -25,5 +29,11 @@ class ApplicationController < ActionController::Base
 
   def admin?
     session[:admin] == true
+  end
+
+  private
+
+  def set_locale_from_params
+    set_locale params[:locale] || 'en'
   end
 end

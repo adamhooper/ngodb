@@ -3,89 +3,89 @@
 <table class="cso">
   <%= render :partial => 'form_title' %>
 
-  <% form_table_subsection 'Background Information' do %>
-    <%= render_form_row f, 'Name', :name %>
-    <%= render_form_row f, 'Abbreviation', :abbreviation %>
-    <%= render_form_row f, 'Region', :region %>
-    <%= render_form_row f, 'District', :district %>
-    <%= render_form_row f, 'Town', :town %>
-    <%= render_form_row f, 'P.O. Box', :mailing_address %>
-    <%= render_form_row f, 'Address', :physical_address, :physical_address_sw %>
-    <%= render_form_row f, 'Telephone (land-line)', :telephone %>
-    <%= render_form_row f, 'Telephone (mobile)', :mobile %>
-    <%= render_form_row f, 'Fax', :fax %>
-    <%= render_form_row f, 'Email', :email %>
-    <%= render_form_row f, 'Website', :website %>
+  <% form_table_subsection _('Background Information') do %>
+    <%= render_form_row f, _('Name'), :name %>
+    <%= render_form_row f, _('Abbreviation'), :abbreviation %>
+    <%= render_form_row f, _('Region'), :region %>
+    <%= render_form_row f, _('District'), :district %>
+    <%= render_form_row f, _('Town'), :town %>
+    <%= render_form_row f, _('P.O. Box'), :mailing_address %>
+    <%= render_form_row f, _('Address'), :physical_address, :physical_address_sw %>
+    <%= render_form_row f, _('Telephone (land-line)'), :telephone %>
+    <%= render_form_row f, _('Telephone (mobile)'), :mobile %>
+    <%= render_form_row f, _('Fax'), :fax %>
+    <%= render_form_row f, _('Email'), :email %>
+    <%= render_form_row f, _('Website'), :website %>
   <% end %>
 
-  <% form_table_subsection 'Personnel' do %>
-    <%= render_form_row f, 'Head of Organization', :head_person %>
-    <%= render_form_row f, 'Name of Contact Person', :contact_person %>
-    <%= render_form_row f, 'Position of Contact Person', :contact_person_position, :contact_person_position_sw %>
-    <% render_form_row f, 'Number of Staff' do %>
+  <% form_table_subsection _('Personnel') do %>
+    <%= render_form_row f, _('Head of Organization'), :head_person %>
+    <%= render_form_row f, _('Name of Contact Person'), :contact_person %>
+    <%= render_form_row f, _('Position of Contact Person'), :contact_person_position, :contact_person_position_sw %>
+    <% render_form_row f, _('Number of Staff') do %>
       <ul>
-        <li><%= f.label :num_staff_male, 'Number of paid male staff:' %><%= f.text_field :num_staff_male, :size => 3 %></li>
-        <li><%= f.label :num_staff_female, 'Number of paid female staff:' %><%= f.text_field :num_staff_female, :size => 3 %></li>
-        <li><%= f.label :num_volunteers_male, 'Number of volunteer male staff:' %><%= f.text_field :num_volunteers_male, :size => 3 %></li>
-        <li><%= f.label :num_volunteers_female, 'Number of volunteer female staff:' %><%= f.text_field :num_volunteers_female, :size => 3 %></li>
+        <li><%= f.label :num_staff_male, _('Number of paid male staff:') %><%= f.text_field :num_staff_male, :size => 3 %></li>
+        <li><%= f.label :num_staff_female, _('Number of paid female staff:') %><%= f.text_field :num_staff_female, :size => 3 %></li>
+        <li><%= f.label :num_volunteers_male, _('Number of volunteer male staff:') %><%= f.text_field :num_volunteers_male, :size => 3 %></li>
+        <li><%= f.label :num_volunteers_female, _('Number of volunteer female staff:') %><%= f.text_field :num_volunteers_female, :size => 3 %></li>
       </ul>
     <% end %>
   <% end %>
 
-  <% form_table_subsection 'Registration and Funding' do %>
-    <%= render_form_row f, 'Registration Number', :registration_number %>
-    <%= render_form_row f, 'Year of Registration', :registration_year %>
-    <% render_form_row f, 'Membership Type', :membership_type_id do %>
+  <% form_table_subsection _('Registration and Funding') do %>
+    <%= render_form_row f, _('Registration Number'), :registration_number %>
+    <%= render_form_row f, _('Year of Registration'), :registration_year %>
+    <% render_form_row f, _('Membership Type'), :membership_type_id do %>
       <%= f.collection_select :membership_type_id, MembershipType.all, :id, :name %>
     <% end %>
-    <%= render_form_row f, 'Network Membership', :networks %>
-    <% render_form_row f, 'Annual Budget', :annual_budget_id do %>
+    <%= render_form_row f, _('Network Membership'), :networks %>
+    <% render_form_row f, _('Annual Budget'), :annual_budget_id do %>
       <%= f.collection_select :annual_budget_id, AnnualBudget.find(:all), :id, :name %>
     <% end %>
-    <%= render_form_row f, 'Main Funding Sources', :grant_funders, :grant_funders_sw %>
+    <%= render_form_row f, _('Main Funding Sources'), :grant_funders, :grant_funders_sw %>
   <% end %>
 
-  <% form_table_subsection 'Work' do %>
-    <% render_form_row f, 'Target Groups' do %>
+  <% form_table_subsection _('Work') do %>
+    <% render_form_row f, _('Target Groups') do %>
       <%= checkbox_array(f, cso, :target_group_ids, TargetGroup.find(:all, :order => :name)) %>
     <% end %>
-    <%= render_form_row f, 'Other Target Groups', :target_groups_other, :target_groups_other_sw %>
-    <% render_form_row f, 'Sector Focuses' do %>
+    <%= render_form_row f, _('Other Target Groups'), :target_groups_other, :target_groups_other_sw %>
+    <% render_form_row f, _('Sector Focuses') do %>
       <%= checkbox_array(f, cso, :sector_focus_ids, SectorFocus.find(:all, :order => :name)) %>
     <% end %>
-    <%= render_form_row f, 'Other Sector Focuses', :sector_focuses_other, :sector_focuses_other_sw %>
-    <% render_form_row f, 'Operational Area', :operational_area_id do %>
+    <%= render_form_row f, _('Other Sector Focuses'), :sector_focuses_other, :sector_focuses_other_sw %>
+    <% render_form_row f, _('Operational Area'), :operational_area_id do %>
       <%= f.collection_select :operational_area_id, OperationalArea.all, :id, :name %>
     <% end %>
-    <%= render_form_row f, 'Name Operational Area', :operational_area_details, :operational_area_details_sw %>
-    <% render_form_row f, 'Focus' do %>
-      <label><%= f.check_box :urban_focus %> Urban</label>
-      <label><%= f.check_box :rural_focus %> Rural</label>
+    <%= render_form_row f, _('Name Operational Area'), :operational_area_details, :operational_area_details_sw %>
+    <% render_form_row f, _('Focus') do %>
+      <label><%= f.check_box :urban_focus %> <%=h _('Urban') %></label>
+      <label><%= f.check_box :rural_focus %> <%=h _('Rural') %></label>
     <% end %>
   <% end %>
 
-  <% form_table_subsection 'Additional Information' do %>
-    <%= render_form_row_textareas f, 'Mission Statement', :mission_statement, :mission_statement_sw %>
-    <%= render_form_row_textareas f, 'Vision Statement', :vision_statement, :vision_statement_sw %>
-    <%= render_form_row_textareas f, 'Main Objectives', :main_objectives, :main_objectives_sw %>
-    <% render_form_row f, 'Major Past Achievements' do %>
+  <% form_table_subsection _('Additional Information') do %>
+    <%= render_form_row_textareas f, _('Mission Statement'), :mission_statement, :mission_statement_sw %>
+    <%= render_form_row_textareas f, _('Vision Statement'), :vision_statement, :vision_statement_sw %>
+    <%= render_form_row_textareas f, _('Main Objectives'), :main_objectives, :main_objectives_sw %>
+    <% render_form_row f, _('Major Past Achievements') do %>
       <table class="past-achievements">
         <thead>
           <tr>
-            <th rowspan="2">Year</th>
-            <th colspan="2">Brief Description</th>
+            <th rowspan="2"><%=h _('Year') %></th>
+            <th colspan="2"><%=h _('Brief Description') %></th>
             <th />
           </tr>
           <tr>
-            <th>English</th>
-            <th>Swahili</th>
+            <th><%=h _('English') %></th>
+            <th><%=h _('Swahili') %></th>
           </tr>
         </thead>
         <tbody id="past_achievement_list">
           <%= render :partial => 'past_achievement', :collection => cso.past_achievements %>
         </tbody>
         <tfoot>
-          <tr><td colspan="2"><%= add_past_achievement_link 'Add Another Achievement' %></td></tr>
+          <tr><td colspan="2"><%= add_past_achievement_link _('Add Another Achievement') %></td></tr>
         </tfoot>
       </table>
     <% end %>

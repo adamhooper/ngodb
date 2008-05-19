@@ -6,6 +6,6 @@
     <td class="year"><%= f.text_field :year %></td>
     <td class="description"><%= f.text_area :description %></td>
     <td class="description"><%= f.text_area :description_sw %></td>
-    <td class="action"><%= link_to_function 'Remove', "$(this).up('.past-achievement').remove()" %></td>
+    <td class="action"><%= link_to_function _('Remove'), "$(this).up('.past-achievement').remove()" %></td>
   </tr>
 <% end %>
