@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cso_id: 1
+  year: 2008
+  description: PastAchievement1
+  description_sw: PastAchievement1Sw
+
+two:
+  cso_id: 2
+  year: 2006
+  description: PastAchievement2
+  description_sw: PastAchievement2Sw

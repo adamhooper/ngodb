@@ -69,14 +69,24 @@
     <%= render_form_row_textareas f, 'Vision Statement', :vision_statement, :vision_statement_sw %>
     <%= render_form_row_textareas f, 'Main Objectives', :main_objectives, :main_objectives_sw %>
     <% render_form_row f, 'Major Past Achievements' do %>
-      <table class="major-past-achievements">
+      <table class="past-achievements">
         <thead>
-          <th>Year</th>
-          <th>Brief Description</th>
+          <tr>
+            <th rowspan="2">Year</th>
+            <th colspan="2">Brief Description</th>
+            <th />
+          </tr>
+          <tr>
+            <th>English</th>
+            <th>Swahili</th>
+          </tr>
         </thead>
-        <tbody>
-          <tr><td colspan="2"><%= link_to_remote 'Add New', :url => 'FIXME' %></td></tr>
+        <tbody id="past_achievement_list">
+          <%= render :partial => 'past_achievement', :collection => cso.past_achievements %>
         </tbody>
+        <tfoot>
+          <tr><td colspan="2"><%= add_past_achievement_link 'Add Another Achievement' %></td></tr>
+        </tfoot>
       </table>
     <% end %>
   <% end %>

@@ -2,9 +2,7 @@
 
 one:
   name: MyString
-  name_sw: MyString
   abbreviation: MyString
-  abbreviation_sw: MyString
   mailing_address: MyString
   physical_address: MyString
   physical_address_sw: MyString
@@ -29,14 +27,13 @@ one:
   registration_act_id: 1
   membership_type_id: 1
   networks: MyString
-  networks_sw: MyString
   annual_budget_id: 1
   grant_funders: MyString
   grant_funders_sw: MyString
   operational_area_id: 1
   operational_area_details: MyString
   operational_area_details_sw: MyString
-  urban_focus: false
+  urban_focus: true
   rural_focus: false
   mission_statement: MyText
   mission_statement_sw: MyText
@@ -47,9 +44,7 @@ one:
 
 two:
   name: MyString
-  name_sw: MyString
   abbreviation: MyString
-  abbreviation_sw: MyString
   mailing_address: MyString
   physical_address: MyString
   physical_address_sw: MyString
@@ -74,15 +69,14 @@ two:
   registration_act_id: 1
   membership_type_id: 1
   networks: MyString
-  networks_sw: MyString
   annual_budget_id: 1
   grant_funders: MyString
   grant_funders_sw: MyString
   operational_area_id: 1
   operational_area_details: MyString
   operational_area_details_sw: MyString
-  urban_focus: false
-  rural_focus: false
+  urban_focus: true
+  rural_focus: true
   mission_statement: MyText
   mission_statement_sw: MyText
   vision_statement: MyText

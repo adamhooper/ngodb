@@ -25,6 +25,7 @@ class CsosController < ApplicationController
   # GET /csos/new.xml
   def new
     @cso = Cso.new
+    @cso.past_achievements.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -57,6 +58,7 @@ class CsosController < ApplicationController
   # PUT /csos/1
   # PUT /csos/1.xml
   def update
+    params[:cso][:existing_past_achievement_attributes] ||= {}
     @cso = Cso.find(params[:id])
 
     respond_to do |format|

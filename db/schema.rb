@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080519013650) do
+ActiveRecord::Schema.define(:version => 20080519032100) do
 
   create_table "annual_budgets", :force => true do |t|
     t.string   "name",       :null => false
@@ -104,6 +104,15 @@ ActiveRecord::Schema.define(:version => 20080519013650) do
   create_table "operational_areas", :force => true do |t|
     t.string   "name"
     t.string   "name_sw"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "past_achievements", :force => true do |t|
+    t.integer  "cso_id",                         :null => false
+    t.integer  "year",                           :null => false
+    t.string   "description",    :default => "", :null => false
+    t.string   "description_sw", :default => "", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

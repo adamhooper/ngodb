@@ -38,4 +38,10 @@ module CsosHelper
       s << "</ul>"
     end
   end
+
+  def add_past_achievement_link(name)
+    link_to_function(name) do |page|
+      page.insert_html :bottom, :past_achievement_list, :partial => 'past_achievement', :object => PastAchievement.new
+    end
+  end
 end

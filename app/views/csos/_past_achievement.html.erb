@@ -1,0 +1,11 @@
+<% new_or_existing = past_achievement.new_record? ? 'new' : 'existing' %>
+<% prefix = "cso[#{new_or_existing}_past_achievement_attributes][]" %>
+
+<% fields_for prefix, past_achievement do |f| %>
+  <tr class="past-achievement">
+    <td class="year"><%= f.text_field :year %></td>
+    <td class="description"><%= f.text_area :description %></td>
+    <td class="description"><%= f.text_area :description_sw %></td>
+    <td class="action"><%= link_to_function 'Remove', "$(this).up('.past-achievement').remove()" %></td>
+  </tr>
+<% end %>
