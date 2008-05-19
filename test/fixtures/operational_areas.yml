@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   name: OperationalArea1
   name_sw: OperationalArea1Sw
 
 two:
+  id: 2
   name: OperationalArea2
   name_sw: OperationalArea2Sw
