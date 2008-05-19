@@ -28,9 +28,17 @@
 <div class="footer">
   <p class="login">
     <% if admin? %>
-      <%= link_to 'Log out', session_path(1), :method => :delete %>
+      <%= link_to _('CSOs'), csos_path %> |
+      <%= link_to _('Annual Budgets'), admin_annual_budgets_path %> |
+      <%= link_to _('Funding Sources'), admin_funding_sources_path %> |
+      <%= link_to _('Membership Types'), admin_membership_types_path %> |
+      <%= link_to _('Operational Areas'), admin_operational_areas_path %> |
+      <%= link_to _('Registration Acts'), admin_registration_acts_path %> |
+      <%= link_to _('Sector Focuses'), admin_sector_focuses_path %> |
+      <%= link_to _('Target Groups'), admin_target_groups_path %> |
+      <%= link_to _('Log out'), session_path(1), :method => :delete %>
     <% else %>
-      <%= link_to 'Log in', new_session_path %>
+      <%= link_to _('Log in'), new_session_path %>
     <% end %>
   </p>
 </div>

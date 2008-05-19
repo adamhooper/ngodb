@@ -24,7 +24,7 @@ namespace :deploy do
 
   desc "Restarts the server"
   task :restart, :roles => :app do
-    run %(touch #{release_path}/tmp/restart.txt)
+    run %(touch #{latest_release}/tmp/restart.txt)
   end
 
   desc "Fixes permissions and updates symlinks"
