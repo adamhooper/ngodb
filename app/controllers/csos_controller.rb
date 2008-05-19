@@ -1,4 +1,6 @@
 class CsosController < ApplicationController
+  before_filter :authorize, :except => [ :index, :show ]
+
   # GET /csos
   # GET /csos.xml
   def index

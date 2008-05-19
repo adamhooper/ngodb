@@ -15,4 +15,8 @@
   </ul>
 <% end %>
 
-<%= link_to 'New cso', new_cso_path %>
+<% if admin? %>
+  <p class="actions">
+    <%= link_to 'New cso', new_cso_path %>
+  </p>
+<% end %>
