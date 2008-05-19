@@ -1,104 +1,18 @@
 <h1>Listing csos</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Name sw</th>
-    <th>Abbreviation</th>
-    <th>Abbreviation sw</th>
-    <th>Mailing address</th>
-    <th>Physical address</th>
-    <th>Physical address sw</th>
-    <th>Region</th>
-    <th>District</th>
-    <th>Town</th>
-    <th>Telephone</th>
-    <th>Mobile</th>
-    <th>Fax</th>
-    <th>Email</th>
-    <th>Website</th>
-    <th>Head person</th>
-    <th>Contact person</th>
-    <th>Contact person position</th>
-    <th>Contact person position sw</th>
-    <th>Num staff male</th>
-    <th>Num staff female</th>
-    <th>Num volunteers male</th>
-    <th>Num volunteers female</th>
-    <th>Registration number</th>
-    <th>Registration year</th>
-    <th>Registration act</th>
-    <th>Membership type</th>
-    <th>Networks</th>
-    <th>Networks sw</th>
-    <th>Annual budget</th>
-    <th>Grant funders</th>
-    <th>Grant funders sw</th>
-    <th>Operational area</th>
-    <th>Operational area details</th>
-    <th>Operational area details sw</th>
-    <th>Urban focus</th>
-    <th>Rural focus</th>
-    <th>Mission statement</th>
-    <th>Mission statement sw</th>
-    <th>Vision statement</th>
-    <th>Vision statement sw</th>
-    <th>Main objectives</th>
-    <th>Main objectives sw</th>
-  </tr>
+<% if @csos.empty? %>
+  <p>No CSOs were found</p>
+<% else %>
+  <p>Found <%= @csos.length %> CSOs:</p>
 
-<% for cso in @csos %>
-  <tr>
-    <td><%=h cso.name %></td>
-    <td><%=h cso.name_sw %></td>
-    <td><%=h cso.abbreviation %></td>
-    <td><%=h cso.abbreviation_sw %></td>
-    <td><%=h cso.mailing_address %></td>
-    <td><%=h cso.physical_address %></td>
-    <td><%=h cso.physical_address_sw %></td>
-    <td><%=h cso.region %></td>
-    <td><%=h cso.district %></td>
-    <td><%=h cso.town %></td>
-    <td><%=h cso.telephone %></td>
-    <td><%=h cso.mobile %></td>
-    <td><%=h cso.fax %></td>
-    <td><%=h cso.email %></td>
-    <td><%=h cso.website %></td>
-    <td><%=h cso.head_person %></td>
-    <td><%=h cso.contact_person %></td>
-    <td><%=h cso.contact_person_position %></td>
-    <td><%=h cso.contact_person_position_sw %></td>
-    <td><%=h cso.num_staff_male %></td>
-    <td><%=h cso.num_staff_female %></td>
-    <td><%=h cso.num_volunteers_male %></td>
-    <td><%=h cso.num_volunteers_female %></td>
-    <td><%=h cso.registration_number %></td>
-    <td><%=h cso.registration_year %></td>
-    <td><%=h cso.registration_act_id %></td>
-    <td><%=h cso.membership_type_id %></td>
-    <td><%=h cso.networks %></td>
-    <td><%=h cso.networks_sw %></td>
-    <td><%=h cso.annual_budget_id %></td>
-    <td><%=h cso.grant_funders %></td>
-    <td><%=h cso.grant_funders_sw %></td>
-    <td><%=h cso.operational_area_id %></td>
-    <td><%=h cso.operational_area_details %></td>
-    <td><%=h cso.operational_area_details_sw %></td>
-    <td><%=h cso.urban_focus %></td>
-    <td><%=h cso.rural_focus %></td>
-    <td><%=h cso.mission_statement %></td>
-    <td><%=h cso.mission_statement_sw %></td>
-    <td><%=h cso.vision_statement %></td>
-    <td><%=h cso.vision_statement_sw %></td>
-    <td><%=h cso.main_objectives %></td>
-    <td><%=h cso.main_objectives_sw %></td>
-    <td><%= link_to 'Show', cso %></td>
-    <td><%= link_to 'Edit', edit_cso_path(cso) %></td>
-    <td><%= link_to 'Destroy', cso, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <ul class="csos">
+    <% for cso in @csos %>
+      <li>
+        <%= link_to cso.name, cso, :class => 'cso' %>
+        <%= link_to '[Details]', cso %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New cso', new_cso_path %>
