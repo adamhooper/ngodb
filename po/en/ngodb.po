@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ngodb 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 15:44-0400\n"
+"POT-Creation-Date: 2008-05-19 16:30-0400\n"
 "PO-Revision-Date: 2008-05-19 15:45-0400\n"
 "Last-Translator: Adam Hooper <adam@adamhooper.com>\n"
 "Language-Team: Adam Hooper <adam@adamhooper.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: app/models/registration_act.rb:-
 msgid "registration act"
@@ -319,7 +319,9 @@ msgstr ""
 
 #: app/views/csos/index.html.erb:6
 msgid "Found one CSO"
-msgstr ""
+msgid_plural "Found %{num} CSOs"
+msgstr[0] ""
+msgstr[1] ""
 
 #: app/views/csos/index.html.erb:12
 msgid "[Details]"
@@ -519,6 +521,7 @@ msgid "English"
 msgstr ""
 
 #: app/views/csos/_form.html.erb:81
+#: app/views/csos/_form_table_subtitle.html.erb:11
 msgid "Swahili"
 msgstr ""
 
@@ -541,10 +544,6 @@ msgstr ""
 #: app/views/csos/new.html.erb:13 app/views/csos/edit.html.erb:14
 #: app/views/csos/show.html.erb:82
 msgid "Back"
-msgstr ""
-
-#: app/views/csos/_form_table_subtitle.html.erb:11
-msgid "Swahilish"
 msgstr ""
 
 #: app/views/csos/edit.html.erb:1
@@ -570,4 +569,3 @@ msgstr ""
 #: app/views/csos/show.html.erb:80
 msgid "Are you sure you want to destroy this CSO? This cannot be undone."
 msgstr ""
-
