@@ -70,6 +70,12 @@ div.notice {
   color: #16944a;
 }
 
+div.error {
+  background: white;
+  padding: 1em;
+  color: red;
+}
+
 div.page_header {
   margin-top: 3em;
 }

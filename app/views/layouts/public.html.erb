@@ -10,9 +10,30 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<% if flash.include? :notice %>
+  <div class="flash notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<% if flash.include? :error %>
+  <div class="flash error">
+    <%= flash[:error] %>
+  </div>
+<% end %>
 
-<%= yield  %>
+<div class="body">
+  <%= yield  %>
+</div>
+
+<div class="footer">
+  <p class="login">
+    <% if admin? %>
+      <%= link_to 'Log out', session_path(1), :method => :delete %>
+    <% else %>
+      <%= link_to 'Log in', new_session_path %>
+    <% end %>
+  </p>
+</div>
 
 </body>
 </html>

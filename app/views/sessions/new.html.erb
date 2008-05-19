@@ -1,0 +1,4 @@
+<% form_tag sessions_path do %>
+  <p>Please enter your password to enter the Administration section.</p>
+  <p>Password: <%= password_field_tag :password %><%= submit_tag 'Log in' %></p>
+<% end %>

@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :csos
+  map.resources :sessions
 
   map.namespace :admin do |admin|
     admin.resources :annual_budgets
