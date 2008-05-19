@@ -4,6 +4,7 @@ set :application, "ngodb"
 set :repository,  "git://github.com/adamh/ngodb.git"
 set :deploy_to, "/home/adam/rails/#{application}"
 set :scm, :git
+set :runner, :adam
 
 role :app, "web.densi.com"
 role :web, "web.densi.com"
@@ -25,6 +26,12 @@ namespace :deploy do
   task :restart, :roles => :app do
     run %(touch #{release_path}/tmp/restart.txt)
   end
+
+  desc "Fixes permissions and updates symlinks"
+  task :after_update_code, :roles => :app do
+    sudo %(chown www-data:www-data #{latest_release}/config/environment.rb)
+    run "ln -nfs #{shared_path}/config/admin-password #{release_path}/config/admin-password" 
+  end
 end
 
 before "deploy:setup", :db
@@ -38,8 +45,8 @@ namespace :db do
 base: &base
   adapter: mysql
   socket: /tmp/mysql.sock
-  username: #{user}
-  password: #{password}
+  username: ngodb
+  password: ngodb
 
 development:
   database: #{application}_dev
@@ -56,6 +63,7 @@ EOF
 
     run "mkdir -p #{shared_path}/config" 
     put db_config.result, "#{shared_path}/config/database.yml" 
+    run "echo default-password > #{shared_path}/config/admin-password"
   end
 
   desc "Make symlink for database yaml" 

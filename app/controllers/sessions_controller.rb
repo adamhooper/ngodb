@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    if params[:password] == 'PyRyKnaydUv2'
+    if params[:password] == password
       session[:admin] = true
     end
 
@@ -26,5 +26,11 @@ class SessionsController < ApplicationController
         redirect_to root_path
       end
     end
+  end
+
+  private
+
+  def password
+    @@password ||= File.open(File.dirname(__FILE__) + '/../../config/admin-password').read.strip
   end
 end
