@@ -1,0 +1,6 @@
+--- 
+vendor/plugins/resource_fu: 
+  local_branch: braid/svn/vendor/plugins/resource-fu
+  type: svn
+  squash: true
+  remote: http://svn.protocool.com/public/plugins/resource_fu
