@@ -1,0 +1,16 @@
+<%# Required locals: "f" (a form_for), %>
+<%# "title" (the field title), "field" (the field name) %>
+<tr>
+  <th>
+    <% if field %>
+      <%= f.label field, title %>
+    <% else %>
+      <label><%=h title %></label>
+    <% end %>
+  </th>
+  <td colspan="2">
+    <div class="spacer">
+      <%= yield %>
+    </div>
+  </td>
+</tr>

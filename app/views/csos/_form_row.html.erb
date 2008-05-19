@@ -1,0 +1,10 @@
+<%# Required locals: "f" (a form_for), %>
+<%# "title" (the field title), "field" (the field name) %>
+<tr>
+  <th><%= f.label field, title %></th>
+  <td colspan="2">
+    <div class="spacer">
+      <%= f.text_field field %>
+    </div>
+  </td>
+</tr>

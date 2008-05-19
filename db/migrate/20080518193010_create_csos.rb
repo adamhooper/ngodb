@@ -2,9 +2,7 @@ class CreateCsos < ActiveRecord::Migration
   def self.up
     create_table :csos do |t|
       t.string :name, :null => false, :default => ''
-      t.string :name_sw, :null => false, :default => ''
       t.string :abbreviation, :null => false, :default => ''
-      t.string :abbreviation_sw, :null => false, :default => ''
       t.string :mailing_address, :null => false, :default => ''
       t.string :physical_address, :null => false, :default => ''
       t.string :physical_address_sw, :null => false, :default => ''
@@ -31,10 +29,13 @@ class CreateCsos < ActiveRecord::Migration
       t.string :registration_act_other_sw, :null => false, :default => ''
       t.integer :membership_type_id, :null => false
       t.string :networks, :null => false, :default => ''
-      t.string :networks_sw, :null => false, :default => ''
       t.integer :annual_budget_id, :null => false
       t.string :grant_funders, :null => false, :default => ''
       t.string :grant_funders_sw, :null => false, :default => ''
+      t.string :target_groups_other, :null => false, :default => ''
+      t.string :target_groups_other_sw, :null => false, :default => ''
+      t.string :sector_focuses_other, :null => false, :default => ''
+      t.string :sector_focuses_other_sw, :null => false, :default => ''
       t.integer :operational_area_id, :null => false
       t.string :operational_area_details, :null => false, :default => ''
       t.string :operational_area_details_sw, :null => false, :default => ''

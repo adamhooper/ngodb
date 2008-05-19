@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080518193010) do
+ActiveRecord::Schema.define(:version => 20080519013650) do
 
   create_table "annual_budgets", :force => true do |t|
     t.string   "name",       :null => false
@@ -20,9 +20,7 @@ ActiveRecord::Schema.define(:version => 20080518193010) do
 
   create_table "csos", :force => true do |t|
     t.string   "name",                        :default => "", :null => false
-    t.string   "name_sw",                     :default => "", :null => false
     t.string   "abbreviation",                :default => "", :null => false
-    t.string   "abbreviation_sw",             :default => "", :null => false
     t.string   "mailing_address",             :default => "", :null => false
     t.string   "physical_address",            :default => "", :null => false
     t.string   "physical_address_sw",         :default => "", :null => false
@@ -49,10 +47,13 @@ ActiveRecord::Schema.define(:version => 20080518193010) do
     t.string   "registration_act_other_sw",   :default => "", :null => false
     t.integer  "membership_type_id",                          :null => false
     t.string   "networks",                    :default => "", :null => false
-    t.string   "networks_sw",                 :default => "", :null => false
     t.integer  "annual_budget_id",                            :null => false
     t.string   "grant_funders",               :default => "", :null => false
     t.string   "grant_funders_sw",            :default => "", :null => false
+    t.string   "target_groups_other",         :default => "", :null => false
+    t.string   "target_groups_other_sw",      :default => "", :null => false
+    t.string   "sector_focuses_other",        :default => "", :null => false
+    t.string   "sector_focuses_other_sw",     :default => "", :null => false
     t.integer  "operational_area_id",                         :null => false
     t.string   "operational_area_details",    :default => "", :null => false
     t.string   "operational_area_details_sw", :default => "", :null => false
@@ -67,6 +68,24 @@ ActiveRecord::Schema.define(:version => 20080518193010) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "csos_sector_focuses", :id => false, :force => true do |t|
+    t.integer "cso_id"
+    t.integer "sector_focus_id"
+  end
+
+  add_index "csos_sector_focuses", ["cso_id", "sector_focus_id"], :name => "index_csos_sector_focuses_on_cso_id_and_sector_focus_id", :unique => true
+  add_index "csos_sector_focuses", ["sector_focus_id"], :name => "index_csos_sector_focuses_on_sector_focus_id"
+  add_index "csos_sector_focuses", ["cso_id"], :name => "index_csos_sector_focuses_on_cso_id"
+
+  create_table "csos_target_groups", :id => false, :force => true do |t|
+    t.integer "cso_id"
+    t.integer "target_group_id"
+  end
+
+  add_index "csos_target_groups", ["cso_id", "target_group_id"], :name => "index_csos_target_groups_on_cso_id_and_target_group_id", :unique => true
+  add_index "csos_target_groups", ["target_group_id"], :name => "index_csos_target_groups_on_target_group_id"
+  add_index "csos_target_groups", ["cso_id"], :name => "index_csos_target_groups_on_cso_id"
 
   create_table "funding_sources", :force => true do |t|
     t.string   "name",       :null => false

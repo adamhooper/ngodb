@@ -1,0 +1,16 @@
+<%# Required locals: "f" (a form_for),  %>
+<%# "title" (the field title), "field" (the field name), %>
+<%# "field_sw" (the Swahili field name %>
+<tr>
+  <th><%= f.label field, title %></th>
+  <td>
+    <div class="spacer">
+      <%= f.text_area field %>
+    </div>
+  </td>
+  <td>
+    <div class="spacer">
+      <%= f.text_area field_sw %>
+    </div>
+  </td>
+</tr>

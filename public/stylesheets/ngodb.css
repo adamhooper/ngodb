@@ -1,0 +1,414 @@
+html {
+  background-color: #edf6f1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body, p, ol, ul, td {
+  font-family: Arial, sans-serif;
+  font-size: 90%;
+}
+
+div.tooltip_content { 
+	width: 25em;
+	white-space: normal;
+	text-align: center;
+}
+div.nav { 
+	background: white; 
+}
+
+div.nav div.nav_pic {
+  background: #16944a;
+  /* rendered inline because URL is different for standalone CDROM */
+  /*background-image: url(/images/title_pic.jpg);*/
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+div.nav div.language {
+    position: absolute;
+}
+
+div.nav div.language p {
+    color: #16944a;
+    font-size: 100%;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+div.nav div.links {
+    text-align: right;
+	margin-top: .3em;
+}
+
+div.nav div.links a {
+  color: #16944a;
+  font-weight: bold;
+  border-left: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  padding: .3em .6em;
+  background-color: #edf6f1;
+}
+
+div.nav div.links a:hover {
+  color: white;
+  background: #16944a;
+}
+
+input#cso_search_more_link { 
+  font-weight: bold; 
+}
+
+div.notice {
+  background: white;
+  padding: 1em;
+  color: #16944a;
+}
+
+div.page_header {
+	margin-top: 3em;
+}
+
+h1 {
+	text-align: left;
+	font-weight: bold;
+	color: #16944a;
+	font-size: 170%;
+	margin-top: 1.5em;
+}
+
+div.subtitle {
+    font-weight: bold;
+	color: #16944a;
+	font-size: 120%;
+	margin-bottom: .4em;
+	margin-top: 1.2em
+}
+
+div.subsubtitle {
+    font-weight: bold;
+	color: #16944a;
+	font-size: 105%;
+}
+
+div.subsubsubtitle {
+    font-weight: bold;
+	font-size: 90%;
+}
+
+div.title_page {
+	max-width: 750px;
+	margin-top: 2em; /* because of nav */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.title_page p {
+	text-align: justify;
+}
+
+
+div.cso_instructions {
+	margin-top: auto;
+}
+
+div.body {
+  margin: 0;
+  padding: 1em;
+  background-color: white;
+}
+
+div.column1-of-3 {
+  width: 33%;
+  float: left;
+}
+
+div.column2-of-3 {
+  margin: 0 33%;
+}
+
+div.column3-of-3 {
+  width: 33%;
+  float: right;
+}
+
+div.column1-of-2 {
+  width: 50%;
+  float: left;
+}
+
+a {
+  color: #0034ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+}
+
+th .fieldWithErrors {
+  padding: 0;
+  background-color: inherit;
+  color: red;
+  text-decoration: underline;
+}
+
+td .fieldWithErrors {
+  padding: 0;
+  background-color: inherit;
+  border: 1px solid red;
+}
+
+#errorExplanation {
+  border: 2px solid red;
+  padding: 7px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+table textarea {
+  width: 100%;
+  height: 5em;
+}
+
+table input {
+  width: 100%;
+}
+
+table ul input {
+  width: auto;
+}
+
+a.cso {
+  color: black;
+  text-decoration: none;
+}
+
+ul.csos {
+  list-style: none;
+  padding: 0 1em;
+}
+
+ul.csos li {
+  margin: 1em 0;
+}
+
+
+table.cso {
+  margin: 1em auto;
+  margin-top: 2.5em;
+  max-width: 50em;
+  border-collapse: collapse;
+  border: 1px solid #bfbfbf;
+}
+
+table.cso th {
+  padding: 8px 6px;
+}
+
+table.cso td div.spacer {
+  margin: 4px 6px;
+}
+
+table.cso td {
+  border-left: 1px solid #bfbfbf;
+}
+
+table.cso thead.real-head th {
+  color: #16944a;
+  background-color: #edf6f1;
+  font-family: "Times New Roman" serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: .25em;
+  border-bottom: none;
+  width: 100%;
+  letter-spacing: .01em;
+  line-height: 1.2em;
+}
+
+table.cso thead.real-head-sub th {
+  color: #16944a;
+  background-color: #edf6f1;
+  font-family: "Times New Roman" serif;
+  font-size: 1.1em;
+  padding: 0em 0em .3em;
+  border-bottom: none;
+  width: 100%;
+  letter-spacing: 0em;
+  line-height: 1.2em;
+}
+
+table.cso thead.language-labels th {
+  color: #16944a;
+  background-color: #edf6f1;
+  text-align: center;
+  padding: 6px;
+  font-weight: bold;
+  font-size: .9em;
+  line-height: .9em;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #bfbfbf;
+  text-transform: uppercase;
+}
+
+table.cso thead th {
+  color: white;
+  background: #16944a;
+  text-align: center;
+  padding: 6px;
+  font-family: "Times New Roman" serif;
+  font-weight: bold;
+  font-size: 1.15em;
+  letter-spacing: .15em;
+  line-height: .9em;
+}
+
+table.cso tbody th {
+  text-align: right;
+  padding-right: 8px;
+  vertical-align: top;
+  width: 30%;
+  font-size: .9em;
+  color: #16944a;
+  background-color: #edf6f1;
+}
+
+* > table.cso tbody th {
+  white-space: nowrap;
+  width: 1px;
+}
+
+table.cso tbody ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+table.cso p {
+  margin: 0;
+  padding: 0;
+}
+
+table.links {
+  margin: 1em auto;
+  margin-top: 0.5em;
+  border-collapse: collapse;
+}
+
+table.links th {
+  width: 350px;
+  height: 100px;
+  padding: 1em;
+}
+
+div.search {
+  border: 1px solid #bfbfbf;
+  background-color: #edf6f1;
+  text-align: center;
+}
+
+div.search p {
+  margin: 1em;
+  padding: 0;
+  text-align: center;
+  clear: both;
+}
+
+div.search div.cso_search_island_id {
+  display: inline;
+  padding-right: 1.5em;
+}
+
+div.search div.cso_search_urban_rural {
+  display: inline;
+  padding-left: 1.5em;
+}
+
+div.search ul {
+  text-align: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 2em;
+}
+
+div.search label, div.search div.heading {
+  color: #16944a;
+  font-size: 100%;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  line-height: 220%;
+  margin-top: 0.6em;
+}
+
+
+div.search li label {
+  font-weight: normal;
+  font-size: 100%;
+  line-height: 120%
+}
+
+div.search input {
+  color: #006b39;
+}
+
+div.footer {
+  border-top: 1px solid #bfbfbf;
+  background-color: #edf6f1;
+  margin-top: 2px; /* Neat "wait, where's the line?" effect */
+}
+
+div.footer p {
+  color: #16944a;
+  text-align: center;
+  margin: 0;
+  padding: .2em;
+}
+
+div.footer p.login {
+  font-size: .8em;
+  text-align: right;
+  padding: 0.1;
+}
+
+p.verification-telephone label {
+  color: red;
+  font-weight: bold;
+}
+
+p.verification-telephone input {
+  width: 10em;
+}

@@ -1,0 +1,83 @@
+<%# Required variables: "f" (form tag), "cso" (Cso) -%>
+<%# The form must be for an object named "cso" -%>
+<table class="cso">
+  <%= render :partial => 'form_title' %>
+
+  <% table_subsection 'Background Information' do %>
+    <%= render_form_row f, 'Name', :name %>
+    <%= render_form_row f, 'Abbreviation', :abbreviation %>
+    <%= render_form_row f, 'Region', :region %>
+    <%= render_form_row f, 'District', :district %>
+    <%= render_form_row f, 'Town', :town %>
+    <%= render_form_row f, 'P.O. Box', :mailing_address %>
+    <%= render_form_row f, 'Address', :physical_address, :physical_address_sw %>
+    <%= render_form_row f, 'Telephone (land-line)', :telephone %>
+    <%= render_form_row f, 'Telephone (mobile)', :mobile %>
+    <%= render_form_row f, 'Fax', :fax %>
+    <%= render_form_row f, 'Email', :email %>
+    <%= render_form_row f, 'Website', :website %>
+  <% end %>
+
+  <% table_subsection 'Personnel' do %>
+    <%= render_form_row f, 'Head of Organization', :head_person %>
+    <%= render_form_row f, 'Name of Contact Person', :contact_person %>
+    <%= render_form_row f, 'Position of Contact Person', :contact_person_position, :contact_person_position_sw %>
+    <% render_form_row f, 'Number of Staff' do %>
+      <ul>
+        <li><%= f.label :num_staff_male, 'Number of paid male staff:' %><%= f.text_field :num_staff_male, :size => 3 %></li>
+        <li><%= f.label :num_staff_female, 'Number of paid female staff:' %><%= f.text_field :num_staff_female, :size => 3 %></li>
+        <li><%= f.label :num_volunteers_male, 'Number of volunteer male staff:' %><%= f.text_field :num_volunteers_male, :size => 3 %></li>
+        <li><%= f.label :num_volunteers_female, 'Number of volunteer female staff:' %><%= f.text_field :num_volunteers_female, :size => 3 %></li>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <% table_subsection 'Registration and Funding' do %>
+    <%= render_form_row f, 'Registration Number', :registration_number %>
+    <%= render_form_row f, 'Year of Registration', :registration_year %>
+    <% render_form_row f, 'Membership Type', :membership_type_id do %>
+      <%= f.collection_select :membership_type_id, MembershipType.all, :id, :name %>
+    <% end %>
+    <%= render_form_row f, 'Network Membership', :networks %>
+    <% render_form_row f, 'Annual Budget', :annual_budget_id do %>
+      <%= f.collection_select :annual_budget_id, AnnualBudget.find(:all), :id, :name %>
+    <% end %>
+    <%= render_form_row f, 'Main Funding Sources', :grant_funders, :grant_funders_sw %>
+  <% end %>
+
+  <% table_subsection 'Work' do %>
+    <% render_form_row f, 'Target Groups' do %>
+      <%= checkbox_array(f, cso, :target_group_ids, TargetGroup.find(:all, :order => :name)) %>
+    <% end %>
+    <%= render_form_row f, 'Other Target Groups', :target_groups_other, :target_groups_other_sw %>
+    <% render_form_row f, 'Sector Focuses' do %>
+      <%= checkbox_array(f, cso, :sector_focus_ids, SectorFocus.find(:all, :order => :name)) %>
+    <% end %>
+    <%= render_form_row f, 'Other Sector Focuses', :sector_focuses_other, :sector_focuses_other_sw %>
+    <% render_form_row f, 'Operational Area', :operational_area_id do %>
+      <%= f.collection_select :operational_area_id, OperationalArea.all, :id, :name %>
+    <% end %>
+    <%= render_form_row f, 'Name Operational Area', :operational_area_details, :operational_area_details_sw %>
+    <% render_form_row f, 'Focus' do %>
+      <label><%= f.check_box :urban_focus %> Urban</label>
+      <label><%= f.check_box :rural_focus %> Rural</label>
+    <% end %>
+  <% end %>
+
+  <% table_subsection 'Additional Information' do %>
+    <%= render_form_row_textareas f, 'Mission Statement', :mission_statement, :mission_statement_sw %>
+    <%= render_form_row_textareas f, 'Vision Statement', :vision_statement, :vision_statement_sw %>
+    <%= render_form_row_textareas f, 'Main Objectives', :main_objectives, :main_objectives_sw %>
+    <% render_form_row f, 'Major Past Achievements' do %>
+      <table class="major-past-achievements">
+        <thead>
+          <th>Year</th>
+          <th>Brief Description</th>
+        </thead>
+        <tbody>
+          <tr><td colspan="2"><%= link_to_remote 'Add New', :url => 'FIXME' %></td></tr>
+        </tbody>
+      </table>
+    <% end %>
+  <% end %>
+</table>

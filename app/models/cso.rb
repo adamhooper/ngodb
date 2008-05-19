@@ -1,8 +1,10 @@
 class Cso < ActiveRecord::Base
+  belongs_to :operational_area
+  has_and_belongs_to_many :target_groups, :order => :name
+  has_and_belongs_to_many :sector_focuses, :order => :name
+
   validates_presence_of :name
   validates_uniqueness_of :name
-  validates_presence_of :name_sw
-  validates_uniqueness_of :name_sw
   validates_presence_of :region
   validates_presence_of :district
   validates_presence_of :membership_type_id
