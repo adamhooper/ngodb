@@ -1,218 +1,78 @@
-<p>
-  <b>Name:</b>
-  <%=h @cso.name %>
-</p>
+<table class="cso">
+  <thead class="real-head">
+    <tr>
+      <th colspan="0"><%=h @cso.name %></th>
+    </tr>
+  </thead>
 
-<p>
-  <b>Name sw:</b>
-  <%=h @cso.name_sw %>
-</p>
+  <% table_subsection 'Background Information' do %>
+    <%= table_detail_row 'Abbreviation', @cso.abbreviation %>
+    <%= table_detail_row 'Region', @cso.region %>
+    <%= table_detail_row 'District', @cso.district %>
+    <%= table_detail_row 'Town', @cso.town %>
+    <%= table_detail_row 'P.O. Box', @cso.mailing_address %>
+    <%= table_detail_row 'Address', @cso.physical_address %>
+    <%= table_detail_row 'Telephone (land-line)', @cso.telephone %>
+    <%= table_detail_row 'Telephone (mobile)', @cso.mobile %>
+    <%= table_detail_row 'Fax', @cso.fax %>
+    <%= table_detail_row_unescaped 'Email', auto_link(@cso.email) %>
+    <%= table_detail_row_unescaped 'Website', auto_link(@cso.website) %>
+  <% end %>
 
-<p>
-  <b>Abbreviation:</b>
-  <%=h @cso.abbreviation %>
-</p>
+  <% table_subsection 'Personnel' do %>
+    <%= table_detail_row 'Head of Organization', @cso.head_person %>
+    <%= table_detail_row 'Name of Contact Person', @cso.contact_person %>
+    <%= table_detail_row 'Position of Contact Person', @cso.contact_person_position %>
+    <% table_detail_row 'Number of Staff' do %>
+      <ul>
+        <li>Number of paid male staff: <%= @cso.num_staff_male %></li>
+        <li>Number of paid female staff: <%= @cso.num_staff_female %></li>
+        <li>Number of volunteer male staff: <%= @cso.num_volunteers_male %></li>
+        <li>Number of volunteer female staff: <%= @cso.num_volunteers_female %></li>
+      </ul>
+    <% end %>
+  <% end %>
 
-<p>
-  <b>Abbreviation sw:</b>
-  <%=h @cso.abbreviation_sw %>
-</p>
+  <% table_subsection 'Registration and Funding' do %>
+    <%= table_detail_row 'Registration Number', @cso.registration_number %>
+    <%= table_detail_row 'Year of Registration', @cso.registration_year %>
+    <%= table_detail_row 'Membership Type', @cso.membership_type.name %>
+    <%= table_detail_row 'Network Membership', @cso.networks %>
+    <%= table_detail_row 'Annual Budget', @cso.annual_budget.name %>
+    <%= table_detail_row 'Main Funding Sources', @cso.grant_funders %>
+  <% end %>
 
-<p>
-  <b>Mailing address:</b>
-  <%=h @cso.mailing_address %>
-</p>
+  <% table_subsection 'Work' do %>
+    <% table_detail_row 'Target Groups' do %>
+      <%= (@cso.target_groups.collect{|tg| link_to(tg.name, csos_path('search[target_group_ids]' => [tg.id]))} + [@cso.target_groups_other]).reject{|tg| tg.blank?}.join('; ') %>
+    <% end %>
+    <% table_detail_row 'Sector Focuses' do %>
+      <%= (@cso.sector_focuses.collect{|sf| link_to(sf.name, csos_path('search[sector_focus_ids]' => [sf.id]))} + [@cso.sector_focuses_other]).reject{|sf| sf.blank?}.join('; ') %>
+    <% end %>
+    <% table_detail_row 'Operational Area' do %>
+      <%= link_to @cso.operational_area.name, csos_path('search[operational_area_ids]' => [@cso.operational_area.id]) %>:
+      <%=h @cso.operational_area_details %>
+    <% end %>
+    <% table_detail_row 'Focus' do %>
+      <%=h [ @cso.urban_focus? ? 'Urban' : nil, @cso.rural_focus? ? 'Rural' : nil ].compact.join('; ') %>
+    <% end %>
+  <% end %>
 
-<p>
-  <b>Physical address:</b>
-  <%=h @cso.physical_address %>
-</p>
-
-<p>
-  <b>Physical address sw:</b>
-  <%=h @cso.physical_address_sw %>
-</p>
-
-<p>
-  <b>Region:</b>
-  <%=h @cso.region %>
-</p>
-
-<p>
-  <b>District:</b>
-  <%=h @cso.district %>
-</p>
-
-<p>
-  <b>Town:</b>
-  <%=h @cso.town %>
-</p>
-
-<p>
-  <b>Telephone:</b>
-  <%=h @cso.telephone %>
-</p>
-
-<p>
-  <b>Mobile:</b>
-  <%=h @cso.mobile %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%=h @cso.fax %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @cso.email %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%=h @cso.website %>
-</p>
-
-<p>
-  <b>Head person:</b>
-  <%=h @cso.head_person %>
-</p>
-
-<p>
-  <b>Contact person:</b>
-  <%=h @cso.contact_person %>
-</p>
-
-<p>
-  <b>Contact person position:</b>
-  <%=h @cso.contact_person_position %>
-</p>
-
-<p>
-  <b>Contact person position sw:</b>
-  <%=h @cso.contact_person_position_sw %>
-</p>
-
-<p>
-  <b>Num staff male:</b>
-  <%=h @cso.num_staff_male %>
-</p>
-
-<p>
-  <b>Num staff female:</b>
-  <%=h @cso.num_staff_female %>
-</p>
-
-<p>
-  <b>Num volunteers male:</b>
-  <%=h @cso.num_volunteers_male %>
-</p>
-
-<p>
-  <b>Num volunteers female:</b>
-  <%=h @cso.num_volunteers_female %>
-</p>
-
-<p>
-  <b>Registration number:</b>
-  <%=h @cso.registration_number %>
-</p>
-
-<p>
-  <b>Registration year:</b>
-  <%=h @cso.registration_year %>
-</p>
-
-<p>
-  <b>Registration act:</b>
-  <%=h @cso.registration_act_id %>
-</p>
-
-<p>
-  <b>Membership type:</b>
-  <%=h @cso.membership_type_id %>
-</p>
-
-<p>
-  <b>Networks:</b>
-  <%=h @cso.networks %>
-</p>
-
-<p>
-  <b>Networks sw:</b>
-  <%=h @cso.networks_sw %>
-</p>
-
-<p>
-  <b>Annual budget:</b>
-  <%=h @cso.annual_budget_id %>
-</p>
-
-<p>
-  <b>Grant funders:</b>
-  <%=h @cso.grant_funders %>
-</p>
-
-<p>
-  <b>Grant funders sw:</b>
-  <%=h @cso.grant_funders_sw %>
-</p>
-
-<p>
-  <b>Operational area:</b>
-  <%=h @cso.operational_area_id %>
-</p>
-
-<p>
-  <b>Operational area details:</b>
-  <%=h @cso.operational_area_details %>
-</p>
-
-<p>
-  <b>Operational area details sw:</b>
-  <%=h @cso.operational_area_details_sw %>
-</p>
-
-<p>
-  <b>Urban focus:</b>
-  <%=h @cso.urban_focus %>
-</p>
-
-<p>
-  <b>Rural focus:</b>
-  <%=h @cso.rural_focus %>
-</p>
-
-<p>
-  <b>Mission statement:</b>
-  <%=h @cso.mission_statement %>
-</p>
-
-<p>
-  <b>Mission statement sw:</b>
-  <%=h @cso.mission_statement_sw %>
-</p>
-
-<p>
-  <b>Vision statement:</b>
-  <%=h @cso.vision_statement %>
-</p>
-
-<p>
-  <b>Vision statement sw:</b>
-  <%=h @cso.vision_statement_sw %>
-</p>
-
-<p>
-  <b>Main objectives:</b>
-  <%=h @cso.main_objectives %>
-</p>
-
-<p>
-  <b>Main objectives sw:</b>
-  <%=h @cso.main_objectives_sw %>
-</p>
-
+  <% table_subsection 'Additional Information' do %>
+    <%= table_detail_row_unescaped 'Mission Statement', simple_format(@cso.mission_statement) %>
+    <%= table_detail_row_unescaped 'Vision Statement', simple_format(@cso.vision_statement) %>
+    <%= table_detail_row_unescaped 'Main Objectives', simple_format(@cso.main_objectives) %>
+    <% table_detail_row 'Major Past Achievements' do %>
+      <% unless @cso.past_achievements.empty? %>
+        <ul class="past-achievements">
+          <% for past_achievement in @cso.past_achievements %>
+            <li><%= past_achievement.year %>: <%=h past_achievement.description %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>
 
 <%= link_to 'Edit', edit_cso_path(@cso) %> |
 <%= link_to 'Back', csos_path %>

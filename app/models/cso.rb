@@ -1,5 +1,7 @@
 class Cso < ActiveRecord::Base
   belongs_to :operational_area
+  belongs_to :membership_type
+  belongs_to :annual_budget
   has_many :past_achievements, :dependent => :destroy
   has_and_belongs_to_many :target_groups, :order => :name
   has_and_belongs_to_many :sector_focuses, :order => :name

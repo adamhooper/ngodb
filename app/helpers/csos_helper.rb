@@ -1,11 +1,38 @@
 module CsosHelper
-  # Renders a subtitle for use in a table.
   def render_table_subtitle(s)
     render :partial => 'table_subtitle', :locals => { :subtitle => s }
   end
 
   def table_subsection(s, &block)
     concat(render_table_subtitle(s), block.binding)
+    concat("<tbody>", block.binding)
+    yield
+    concat("</tbody>", block.binding)
+  end
+
+  def table_detail_row(heading, value=nil, &block)
+    before = %(<tr><th>#{h(heading)}</th><td><div class="spacer">)
+    after = %(</div></td></tr>)
+    if block_given?
+      concat(before, block.binding)
+      yield
+      concat(after, block.binding)
+    else
+      "#{before}#{h(value)}#{after}"
+    end
+  end
+
+  def table_detail_row_unescaped(heading, value)
+    %(<tr><th>#{h(heading)}</th><td><div class="spacer">#{value}</div></td></tr>)
+  end
+
+  # Renders a subtitle for use in a table.
+  def render_form_table_subtitle(s)
+    render :partial => 'form_table_subtitle', :locals => { :subtitle => s }
+  end
+
+  def form_table_subsection(s, &block)
+    concat(render_form_table_subtitle(s), block.binding)
     concat("<tbody>", block.binding)
     yield
     concat("</tbody>", block.binding)

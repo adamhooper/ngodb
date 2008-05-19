@@ -3,7 +3,7 @@
 <table class="cso">
   <%= render :partial => 'form_title' %>
 
-  <% table_subsection 'Background Information' do %>
+  <% form_table_subsection 'Background Information' do %>
     <%= render_form_row f, 'Name', :name %>
     <%= render_form_row f, 'Abbreviation', :abbreviation %>
     <%= render_form_row f, 'Region', :region %>
@@ -18,7 +18,7 @@
     <%= render_form_row f, 'Website', :website %>
   <% end %>
 
-  <% table_subsection 'Personnel' do %>
+  <% form_table_subsection 'Personnel' do %>
     <%= render_form_row f, 'Head of Organization', :head_person %>
     <%= render_form_row f, 'Name of Contact Person', :contact_person %>
     <%= render_form_row f, 'Position of Contact Person', :contact_person_position, :contact_person_position_sw %>
@@ -32,7 +32,7 @@
     <% end %>
   <% end %>
 
-  <% table_subsection 'Registration and Funding' do %>
+  <% form_table_subsection 'Registration and Funding' do %>
     <%= render_form_row f, 'Registration Number', :registration_number %>
     <%= render_form_row f, 'Year of Registration', :registration_year %>
     <% render_form_row f, 'Membership Type', :membership_type_id do %>
@@ -45,7 +45,7 @@
     <%= render_form_row f, 'Main Funding Sources', :grant_funders, :grant_funders_sw %>
   <% end %>
 
-  <% table_subsection 'Work' do %>
+  <% form_table_subsection 'Work' do %>
     <% render_form_row f, 'Target Groups' do %>
       <%= checkbox_array(f, cso, :target_group_ids, TargetGroup.find(:all, :order => :name)) %>
     <% end %>
@@ -64,7 +64,7 @@
     <% end %>
   <% end %>
 
-  <% table_subsection 'Additional Information' do %>
+  <% form_table_subsection 'Additional Information' do %>
     <%= render_form_row_textareas f, 'Mission Statement', :mission_statement, :mission_statement_sw %>
     <%= render_form_row_textareas f, 'Vision Statement', :vision_statement, :vision_statement_sw %>
     <%= render_form_row_textareas f, 'Main Objectives', :main_objectives, :main_objectives_sw %>
