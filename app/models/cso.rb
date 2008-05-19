@@ -19,14 +19,16 @@ class Cso < ActiveRecord::Base
 
   def new_past_achievement_attributes=(past_achievement_attributes)
     past_achievement_attributes.each do |attributes|
-      past_achievements.build attributes
+      unless attributes.values.reject{|v| v.blank?}.empty?
+        past_achievements.build attributes
+      end
     end
   end
 
   def existing_past_achievement_attributes=(past_achievement_attributes)
     past_achievements.reject(&:new_record?).each do |past_achievement|
       attributes = past_achievement_attributes[past_achievement.id.to_s]
-      if attributes
+      if attributes and !attributes.values.reject{|v| v.blank?}.empty?
         past_achievement.attributes = attributes
       else
         past_achievements.delete(past_achievement)
