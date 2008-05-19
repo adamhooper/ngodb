@@ -12,11 +12,11 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :target_groups
   end
 
-  map.root :controller => 'csos'
+  map.root :controller => 'csos', :locale => 'en'
 
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
-  map.connect ':locale/:controller/:action/:id'
-  map.connect ':locale/:controller/:action/:id.:format'
+  map.connect ':locale/:controller/:action/:id', :locale => 'en'
+  map.connect ':locale/:controller/:action/:id.:format', :locale => 'en'
 end
