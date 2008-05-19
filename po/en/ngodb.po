@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ngodb 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 16:30-0400\n"
+"POT-Creation-Date: 2008-05-19 17:19-0400\n"
 "PO-Revision-Date: 2008-05-19 15:45-0400\n"
 "Last-Translator: Adam Hooper <adam@adamhooper.com>\n"
 "Language-Team: Adam Hooper <adam@adamhooper.com>\n"
@@ -431,101 +431,114 @@ msgstr ""
 msgid "Year of Registration"
 msgstr ""
 
-#: app/views/csos/_form.html.erb:38 app/views/csos/show.html.erb:39
-msgid "Membership Type"
+#: app/views/csos/_form.html.erb:38 app/views/csos/show.html.erb:40
+#: app/views/csos/show.html.erb:42
+msgid "Registration Act"
 msgstr ""
 
-#: app/views/csos/_form.html.erb:41 app/views/csos/show.html.erb:40
-msgid "Network Membership"
+#: app/views/csos/_form.html.erb:39
+msgid "Other"
 msgstr ""
 
-#: app/views/csos/_form.html.erb:42 app/views/csos/show.html.erb:41
-msgid "Annual Budget"
+#: app/views/csos/_form.html.erb:41
+msgid "If other, please specify:"
 msgstr ""
 
-#: app/views/csos/_form.html.erb:45 app/views/csos/show.html.erb:42
-msgid "Main Funding Sources"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:48 app/views/csos/show.html.erb:45
-msgid "Work"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:49 app/views/csos/show.html.erb:46
-msgid "Target Groups"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:52
-msgid "Other Target Groups"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:53 app/views/csos/show.html.erb:49
-msgid "Sector Focuses"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:56
-msgid "Other Sector Focuses"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:57 app/views/csos/show.html.erb:52
-msgid "Operational Area"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:60
-msgid "Name Operational Area"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:61 app/views/csos/show.html.erb:56
-msgid "Focus"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:62 app/views/csos/show.html.erb:57
-msgid "Urban"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:63 app/views/csos/show.html.erb:57
-msgid "Rural"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:67 app/views/csos/show.html.erb:61
-msgid "Additional Information"
-msgstr "Additional Information"
-
-#: app/views/csos/_form.html.erb:68 app/views/csos/show.html.erb:62
-msgid "Mission Statement"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:69 app/views/csos/show.html.erb:63
-msgid "Vision Statement"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:70 app/views/csos/show.html.erb:64
-msgid "Main Objectives"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:71 app/views/csos/show.html.erb:65
-msgid "Major Past Achievements"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:75
-msgid "Year"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:76
-msgid "Brief Description"
-msgstr ""
-
-#: app/views/csos/_form.html.erb:80
+#: app/views/csos/_form.html.erb:43 app/views/csos/_form.html.erb:90
 #: app/views/csos/_form_table_subtitle.html.erb:10
 msgid "English"
 msgstr ""
 
-#: app/views/csos/_form.html.erb:81
+#: app/views/csos/_form.html.erb:45 app/views/csos/_form.html.erb:91
 #: app/views/csos/_form_table_subtitle.html.erb:11
 msgid "Swahili"
 msgstr ""
 
-#: app/views/csos/_form.html.erb:88
+#: app/views/csos/_form.html.erb:48 app/views/csos/show.html.erb:44
+msgid "Membership Type"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:51 app/views/csos/show.html.erb:45
+msgid "Network Membership"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:52 app/views/csos/show.html.erb:46
+msgid "Annual Budget"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:55 app/views/csos/show.html.erb:47
+msgid "Main Funding Sources"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:58 app/views/csos/show.html.erb:50
+msgid "Work"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:59 app/views/csos/show.html.erb:51
+msgid "Target Groups"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:62
+msgid "Other Target Groups"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:63 app/views/csos/show.html.erb:54
+msgid "Sector Focuses"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:66
+msgid "Other Sector Focuses"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:67 app/views/csos/show.html.erb:57
+msgid "Operational Area"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:70
+msgid "Name Operational Area"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:71 app/views/csos/show.html.erb:61
+msgid "Focus"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:72 app/views/csos/show.html.erb:62
+msgid "Urban"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:73 app/views/csos/show.html.erb:62
+msgid "Rural"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:77 app/views/csos/show.html.erb:66
+msgid "Additional Information"
+msgstr "Additional Information"
+
+#: app/views/csos/_form.html.erb:78 app/views/csos/show.html.erb:67
+msgid "Mission Statement"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:79 app/views/csos/show.html.erb:68
+msgid "Vision Statement"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:80 app/views/csos/show.html.erb:69
+msgid "Main Objectives"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:81 app/views/csos/show.html.erb:70
+msgid "Major Past Achievements"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:85
+msgid "Year"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:86
+msgid "Brief Description"
+msgstr ""
+
+#: app/views/csos/_form.html.erb:98
 msgid "Add Another Achievement"
 msgstr ""
 
@@ -542,7 +555,7 @@ msgid "Create"
 msgstr ""
 
 #: app/views/csos/new.html.erb:13 app/views/csos/edit.html.erb:14
-#: app/views/csos/show.html.erb:82
+#: app/views/csos/show.html.erb:87
 msgid "Back"
 msgstr ""
 
@@ -558,14 +571,14 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: app/views/csos/show.html.erb:79
+#: app/views/csos/show.html.erb:84
 msgid "Edit"
 msgstr ""
 
-#: app/views/csos/show.html.erb:80
+#: app/views/csos/show.html.erb:85
 msgid "Destroy"
 msgstr ""
 
-#: app/views/csos/show.html.erb:80
+#: app/views/csos/show.html.erb:85
 msgid "Are you sure you want to destroy this CSO? This cannot be undone."
 msgstr ""
