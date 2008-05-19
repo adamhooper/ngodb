@@ -55,11 +55,11 @@ module CsosHelper
   def checkbox_array(f, object, attribute_method, all_values)
     returning('') do |s|
       s << "<ul>"
-      all_values.each do |value|
+      all_values.sort_by(&:localized_name).each do |value|
         s << "<li><label>"
         s << check_box_tag("#{f.object_name}[#{attribute_method}][]", value.id, object.send(attribute_method).include?(value.id), :id => "#{f.object_name}_#{attribute_method}_#{value.id}")
         s << ' '
-        s << h(value.name)
+        s << h(value.localized_name)
         s << "</label></li>"
       end
       s << "</ul>"

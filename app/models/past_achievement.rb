@@ -1,6 +1,10 @@
 class PastAchievement < ActiveRecord::Base
-  belongs_to :cso
-  validates_presence_of :year
+  extend ModelTranslations
+
   validates_presence_of :description
+  validates_uniqueness_of :description
   validates_presence_of :description_sw
+  validates_uniqueness_of :description_sw
+
+  localize :description
 end

@@ -11,7 +11,7 @@
     <%= table_detail_row _('District'), @cso.district %>
     <%= table_detail_row _('Town'), @cso.town %>
     <%= table_detail_row _('P.O. Box'), @cso.mailing_address %>
-    <%= table_detail_row _('Address'), @cso.physical_address %>
+    <%= table_detail_row _('Address'), @cso.localized_physical_address %>
     <%= table_detail_row _('Telephone (land-line)'), @cso.telephone %>
     <%= table_detail_row _('Telephone (mobile)'), @cso.mobile %>
     <%= table_detail_row _('Fax'), @cso.fax %>
@@ -22,7 +22,7 @@
   <% table_subsection _('Personnel') do %>
     <%= table_detail_row _('Head of Organization'), @cso.head_person %>
     <%= table_detail_row _('Name of Contact Person'), @cso.contact_person %>
-    <%= table_detail_row _('Position of Contact Person'), @cso.contact_person_position %>
+    <%= table_detail_row _('Position of Contact Person'), @cso.localized_contact_person_position %>
     <% table_detail_row _('Number of Staff') do %>
       <ul>
         <li><%=h _('Number of paid male staff:') %> <%= @cso.num_staff_male %></li>
@@ -36,22 +36,27 @@
   <% table_subsection _('Registration and Funding') do %>
     <%= table_detail_row _('Registration Number'), @cso.registration_number %>
     <%= table_detail_row _('Year of Registration'), @cso.registration_year %>
-    <%= table_detail_row _('Membership Type'), @cso.membership_type.name %>
+    <% if @cso.registration_act %>
+      <%= table_detail_row_unescaped _('Registration Act'), link_to(@cso.registration_act.localized_name, csos_path('search[registration_act_ids]' => [@cso.registration_act.id])) %>
+    <% else %>
+      <%= table_detail_row _('Registration Act'), @cso.localized_registration_act_other %>
+    <% end %>
+    <%= table_detail_row _('Membership Type'), @cso.membership_type.localized_name %>
     <%= table_detail_row _('Network Membership'), @cso.networks %>
-    <%= table_detail_row _('Annual Budget'), @cso.annual_budget.name %>
+    <%= table_detail_row _('Annual Budget'), @cso.annual_budget.localized_name %>
     <%= table_detail_row _('Main Funding Sources'), @cso.grant_funders %>
   <% end %>
 
   <% table_subsection _('Work') do %>
     <% table_detail_row _('Target Groups') do %>
-      <%= (@cso.target_groups.collect{|tg| link_to(tg.name, csos_path('search[target_group_ids]' => [tg.id]))} + [@cso.target_groups_other]).reject{|tg| tg.blank?}.join('; ') %>
+      <%= (@cso.target_groups.collect{|tg| link_to(tg.localized_name, csos_path('search[target_group_ids]' => [tg.id]))} + [@cso.localized_target_groups_other]).reject{|tg| tg.blank?}.join('; ') %>
     <% end %>
     <% table_detail_row _('Sector Focuses') do %>
-      <%= (@cso.sector_focuses.collect{|sf| link_to(sf.name, csos_path('search[sector_focus_ids]' => [sf.id]))} + [@cso.sector_focuses_other]).reject{|sf| sf.blank?}.join('; ') %>
+      <%= (@cso.sector_focuses.collect{|sf| link_to(sf.localized_name, csos_path('search[sector_focus_ids]' => [sf.id]))} + [@cso.localized_sector_focuses_other]).reject{|sf| sf.blank?}.join('; ') %>
     <% end %>
     <% table_detail_row _('Operational Area') do %>
-      <%= link_to @cso.operational_area.name, csos_path('search[operational_area_ids]' => [@cso.operational_area.id]) %>:
-      <%=h @cso.operational_area_details %>
+      <%= link_to @cso.operational_area.localized_name, csos_path('search[operational_area_ids]' => [@cso.operational_area.id]) %>:
+      <%=h @cso.localized_operational_area_details %>
     <% end %>
     <% table_detail_row _('Focus') do %>
       <%=h [ @cso.urban_focus? ? _('Urban') : nil, @cso.rural_focus? ? _('Rural') : nil ].compact.join('; ') %>
@@ -59,14 +64,14 @@
   <% end %>
 
   <% table_subsection _('Additional Information') do %>
-    <%= table_detail_row_unescaped _('Mission Statement'), simple_format(@cso.mission_statement) %>
-    <%= table_detail_row_unescaped _('Vision Statement'), simple_format(@cso.vision_statement) %>
-    <%= table_detail_row_unescaped _('Main Objectives'), simple_format(@cso.main_objectives) %>
+    <%= table_detail_row_unescaped _('Mission Statement'), simple_format(@cso.localized_mission_statement) %>
+    <%= table_detail_row_unescaped _('Vision Statement'), simple_format(@cso.localized_vision_statement) %>
+    <%= table_detail_row_unescaped _('Main Objectives'), simple_format(@cso.localized_main_objectives) %>
     <% table_detail_row _('Major Past Achievements') do %>
       <% unless @cso.past_achievements.empty? %>
         <ul class="past-achievements">
           <% for past_achievement in @cso.past_achievements %>
-            <li><%= past_achievement.year %>: <%=h past_achievement.description %></li>
+            <li><%= past_achievement.year %>: <%=h past_achievement.localized_description %></li>
           <% end %>
         </ul>
       <% end %>

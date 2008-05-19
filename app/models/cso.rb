@@ -1,7 +1,10 @@
 class Cso < ActiveRecord::Base
+  extend ModelTranslations
+
   belongs_to :operational_area
   belongs_to :membership_type
   belongs_to :annual_budget
+  belongs_to :registration_act
   has_many :past_achievements, :dependent => :destroy
   has_and_belongs_to_many :target_groups, :order => :name
   has_and_belongs_to_many :sector_focuses, :order => :name
@@ -14,6 +17,11 @@ class Cso < ActiveRecord::Base
   validates_presence_of :operational_area_id
   validates_associated :past_achievements
   validate :must_have_urban_or_rural_focus
+
+  localize :physical_address, :contact_person_position,
+           :registration_act_other, :grant_funders, :target_groups_other,
+           :sector_focuses_other, :operational_area_details,
+           :mission_statement, :vision_statement, :main_objectives
 
   after_update :save_past_achievements
 

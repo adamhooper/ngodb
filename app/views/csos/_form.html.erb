@@ -35,27 +35,37 @@
   <% form_table_subsection _('Registration and Funding') do %>
     <%= render_form_row f, _('Registration Number'), :registration_number %>
     <%= render_form_row f, _('Year of Registration'), :registration_year %>
+    <% render_form_row f, _('Registration Act'), :registration_act_id do %>
+      <%= f.collection_select :registration_act_id, RegistrationAct.all, :id, :localized_name, :include_blank => _('Other') %>
+      <p>
+        <%=h _('If other, please specify:') %>
+        <br />
+        <%=h _('English') %>: <%= f.text_field :registration_act_other %>
+        <br />
+        <%=h _('Swahili') %>: <%= f.text_field :registration_act_other_sw %>
+      </p>
+    <% end %>
     <% render_form_row f, _('Membership Type'), :membership_type_id do %>
-      <%= f.collection_select :membership_type_id, MembershipType.all, :id, :name %>
+      <%= f.collection_select :membership_type_id, MembershipType.all, :id, :localized_name %>
     <% end %>
     <%= render_form_row f, _('Network Membership'), :networks %>
     <% render_form_row f, _('Annual Budget'), :annual_budget_id do %>
-      <%= f.collection_select :annual_budget_id, AnnualBudget.find(:all), :id, :name %>
+      <%= f.collection_select :annual_budget_id, AnnualBudget.find(:all), :id, :localized_name %>
     <% end %>
     <%= render_form_row f, _('Main Funding Sources'), :grant_funders, :grant_funders_sw %>
   <% end %>
 
   <% form_table_subsection _('Work') do %>
     <% render_form_row f, _('Target Groups') do %>
-      <%= checkbox_array(f, cso, :target_group_ids, TargetGroup.find(:all, :order => :name)) %>
+      <%= checkbox_array(f, cso, :target_group_ids, TargetGroup.all) %>
     <% end %>
     <%= render_form_row f, _('Other Target Groups'), :target_groups_other, :target_groups_other_sw %>
     <% render_form_row f, _('Sector Focuses') do %>
-      <%= checkbox_array(f, cso, :sector_focus_ids, SectorFocus.find(:all, :order => :name)) %>
+      <%= checkbox_array(f, cso, :sector_focus_ids, SectorFocus.all) %>
     <% end %>
     <%= render_form_row f, _('Other Sector Focuses'), :sector_focuses_other, :sector_focuses_other_sw %>
     <% render_form_row f, _('Operational Area'), :operational_area_id do %>
-      <%= f.collection_select :operational_area_id, OperationalArea.all, :id, :name %>
+      <%= f.collection_select :operational_area_id, OperationalArea.all, :id, :localized_name %>
     <% end %>
     <%= render_form_row f, _('Name Operational Area'), :operational_area_details, :operational_area_details_sw %>
     <% render_form_row f, _('Focus') do %>
